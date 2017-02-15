@@ -1,7 +1,6 @@
 
 /** Initialize Firebase SDK **/
 // Need to config to firebase server config
-<script>
   // Initialize the Firebase SDK
   var config = {
     apiKey: '<your-api-key>',
@@ -10,8 +9,28 @@
     storageBucket: '<your-storage-bucket>'
   };
   firebase.initializeApp(config);
-</script>
 
 
 
-var app = angular.module("beachLive", ["firebase"]);
+var app = angular.module("beachLive", ["firebase", "ui.router"]);
+
+app.config(function($stateProvider, $urlRouterProvider){
+
+	$urlRouterProvider.otherwise('/');
+
+
+	$stateProvider
+		.state("main", {
+			url: '/',
+			templateUrl: "view/main.html",
+			controller: ""
+
+		})
+	// var helloState = {
+ //    name: 'hello',
+ //    url: '/',
+ //    template: '<h3>hello world!</h3>'
+ //  }
+
+ //  $stateProvider.state(helloState);
+});
