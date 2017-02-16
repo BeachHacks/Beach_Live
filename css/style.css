@@ -6,6 +6,7 @@ html, body{
 #main{
 	height: 100%;
 	background: #F8CD53;
+	background-attachment:fixed;
 }
 
 #menu-tab{
