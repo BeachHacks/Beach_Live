@@ -12,9 +12,9 @@
 
 
 
-var app = angular.module("beachLive", ["firebase", "ui.router"]);
+var beachLiveApp = angular.module("beachLive", ["firebase", "ui.router"]);
 
-app.config(function($stateProvider, $urlRouterProvider){
+beachLiveApp.config(function($stateProvider, $urlRouterProvider){
 
 	$urlRouterProvider.otherwise('/');
 
@@ -23,7 +23,7 @@ app.config(function($stateProvider, $urlRouterProvider){
 		.state("main", {
 			url: '/',
 			templateUrl: "view/main.html",
-			controller: ""
+			controller: "main_controller"
 
 		})
 	// var helloState = {
