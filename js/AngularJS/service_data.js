@@ -6,11 +6,12 @@ beachLiveApp.service('data', function() {
     	tab: {
     		ANNOUCEMENTS	: "anouncement",
     		MAP				: "map",
-    		MENTOR			: "test",
+    		MENTOR			: "mentor",
     		HARDWARE		: "test",
     		SONG			: "test",
     		DEVPOST			: "test"
-    	}
+    	},
+    	anouncement_content : ["Content 1", "Content 2", "Content 3"]
     };
 
     return data;

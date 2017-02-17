@@ -23,13 +23,19 @@ beachLiveApp.config(function($stateProvider, $urlRouterProvider){
 		.state("anouncement", {
 			url: '/anouncement',
 			templateUrl: "view/announcement.html",
-			controller: "main_controller"
+			controller: "announcement_controller"
 
 		})
 
 		.state("map",{
 			url: '/map',
 			templateUrl: "view/map.html",
+			controller: ""
+		})
+
+		.state("mentor", {
+			url: "/mentor",
+			templateUrl: "view/mentor.html",
 			controller: ""
 		})
 	// var helloState = {
