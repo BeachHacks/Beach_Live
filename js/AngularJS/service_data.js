@@ -4,13 +4,14 @@ beachLiveApp.service('data', function() {
     var data = {
     	test: "test String",
     	tab: {
-    		ANNOUCEMENTS	: "test",
-    		MAP				: "test",
-    		MENTOR			: "test",
+    		ANNOUCEMENTS	: "anouncement",
+    		MAP				: "map",
+    		MENTOR			: "mentor",
     		HARDWARE		: "test",
     		SONG			: "test",
     		DEVPOST			: "test"
-    	}
+    	},
+    	anouncement_content : ["Content 1", "Content 2", "Content 3"]
     };
 
     return data;

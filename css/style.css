@@ -6,6 +6,7 @@ html, body{
 #main{
 	height: 100%;
 	background: #F8CD53;
+	background-attachment:fixed;
 }
 
 #menu-tab{
@@ -34,4 +35,20 @@ html, body{
 
 #menu-tab a:visited{
 	text-decoration: none;
+}
+
+#campus-map{
+	/*background-image:url('../campusMap.pdf');*/
+	height: 100px;
+	/*background-image:url('https://sbloom2.files.wordpress.com/2016/03/b0936-testimages.jpeg?w=400&h=265');*/
+}
+
+.announcement-content{
+	
+}
+
+.announcement-content div{
+	padding: 10px;
+	background: white;
+	color:black;
 }

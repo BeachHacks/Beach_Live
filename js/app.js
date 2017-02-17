@@ -16,15 +16,27 @@ var beachLiveApp = angular.module("beachLive", ["firebase", "ui.router"]);
 
 beachLiveApp.config(function($stateProvider, $urlRouterProvider){
 
-	$urlRouterProvider.otherwise('/');
+	$urlRouterProvider.otherwise('/anouncement');
 
 
 	$stateProvider
-		.state("main", {
-			url: '/',
-			templateUrl: "view/main.html",
-			controller: "main_controller"
+		.state("anouncement", {
+			url: '/anouncement',
+			templateUrl: "view/announcement.html",
+			controller: "announcement_controller"
 
+		})
+
+		.state("map",{
+			url: '/map',
+			templateUrl: "view/map.html",
+			controller: ""
+		})
+
+		.state("mentor", {
+			url: "/mentor",
+			templateUrl: "view/mentor.html",
+			controller: ""
 		})
 	// var helloState = {
  //    name: 'hello',
