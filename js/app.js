@@ -1,15 +1,22 @@
 
-/** Initialize Firebase SDK **/
-// Need to config to firebase server config
-  // Initialize the Firebase SDK
-  var config = {
-    apiKey: '<your-api-key>',
-    authDomain: '<your-auth-domain>',
-    databaseURL: '<your-database-url>',
-    storageBucket: '<your-storage-bucket>'
-  };
-  firebase.initializeApp(config);
+/** Firebase **/
+var config = {
+		apiKey: "AIzaSyC6Sz6SivyHseg4-xj_7lwe2URizls4Z-g",
+		authDomain: "beachlive-e9dbc.firebaseapp.com",
+		databaseURL: "https://beachlive-e9dbc.firebaseio.com",
+		storageBucket: "beachlive-e9dbc.appspot.com",
+		messagingSenderId: "790938157516"
+	};
+firebase.initializeApp(config);
 
+var database = firebase.database();
+
+database.ref('users/'+"123").set({
+	username: "testName",
+	email: "email"
+});
+
+/** Firebase **/
 
 
 var beachLiveApp = angular.module("beachLive", ["firebase", "ui.router"]);
