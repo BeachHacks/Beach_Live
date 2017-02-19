@@ -43,8 +43,28 @@ html, body{
 	/*background-image:url('https://sbloom2.files.wordpress.com/2016/03/b0936-testimages.jpeg?w=400&h=265');*/
 }
 
-.announcement-content{
-	
+.box{
+
+	width: 100%;
+	background: transparent linear-gradient(to right bottom, #3498DB, #2992D8) repeat scroll 0% 0%;
+	border-radius: 2px;
+	color: #34495E;
+	margin-bottom: 2.5%;
+	margin-left: 0px !important;
+	margin-right: 0px !important;
+}
+
+.box-timestamp{
+	padding: 1.5% 2% 1.5% 3%;
+	color: #ECF0F1;
+	font-weight: 700;
+	width: 12.3333% !important;
+}
+
+.box-message{
+	padding: 1.5% 3% 1.5% 2%;
+	color: #ECF0F1;
+	width: 86.6667% !important;
 }
 
 .announcement-content div{
