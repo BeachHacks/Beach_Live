@@ -1,14 +1,11 @@
-<div style="background:; height: 100% ">
-	ANNOUNCEMENT TAB
-	<!-- <div class="container">
-		<div class="announcement-content" ng-repeat="c in content">
-			<div>
-				{{c}}
-			</div>
-		</div>
-	</div> -->
-	<div class="box row" ng-repeat="c in content">
-		<div class="box-timestamp col-md-1">{{c.timestamp}}</div>
-		<div class="box-message col-md-11">{{c.message}}</div>
+<div class="row" style="">
+	<div style="background:;  ">
+		ANNOUNCEMENT TAB
+
+		<!-- Announcement Message Box -->
+		<div class="box row" ng-repeat="c in content">
+			<div class="box-timestamp col-md-1">{{c.timestamp}}</div>
+			<div class="box-message col-md-11">{{c.message}}</div>
+		</div> <!-- Announcement Message Box -->
 	</div>
 </div>

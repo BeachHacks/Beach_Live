@@ -1,4 +1,11 @@
 <div id="main" ng-controller="main_controller">
+
+	<!-- Temp Indicator for admin -->
+	<div ng-show="adminAccess" style="text-align: center; font-size: 50px;">
+		Admin
+	</div>
+
+
 	<div id="menu-bar">
 		<div id="menu-tab" >
 			<a ng-repeat="(name, url) in tab" ui-sref="{{url}}" ui-sref-active="activePage">{{name}}</a>
@@ -6,36 +13,38 @@
 	</div> <!-- Menu Bar -->
 
 	<!-- Tab Content -->
-	<div class="container" style="background: ; height: 85%; overflow-y: auto; overflow-x: hidden;">
+	<div class="container" style="height: 85%; overflow-y: auto;">
 
-		<ui-view></ui-view>
+		<ui-view style=""></ui-view>
+		<!-- <div style="height: 100%;"> -->
+		<!-- </div> -->
 	</div> <!-- Tab Content -->
 
 
-<!-- Trigger the modal with a button -->
-<button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#loginModal">HIDE THIS LOGIN BUTTON</button>
+	<!-- Trigger the modal with a button -->
+	<button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#loginModal">HIDE THIS LOGIN BUTTON</button>
 
-<!-- Modal -->
-<div id="loginModal" class="modal fade" role="dialog">
-	<div class="modal-dialog">
-		<!-- Modal content-->
-		<div class="modal-content">
-			<div class="modal-header">
-				<button type="button" class="close" data-dismiss="modal">x</button>
-				<h4 class="modal-title">Admin Login Only</h4>
-			</div>
-			<div style="padding-top: 5px; padding-left: 10px; color:red;" ng-show="failed">Failed Login!</div>
-			<div class="modal-body">
-				<input style="margin-bottom: 10px;" class="form-control" type="text" placeholder="User" ng-model="admin.user" required>
-				<input class="form-control" type="password" placeholder="Password" ng-model="admin.password"required>
-			</div>
+	<!-- Login Modal -->
+	<div id="loginModal" class="modal fade" role="dialog">
+		<div class="modal-dialog">
+			<!-- Modal content-->
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal">x</button>
+					<h4 class="modal-title">Admin Login Only</h4>
+				</div>
+				<div style="padding-top: 5px; padding-left: 10px; color:red;" ng-show="failed">Failed Login!</div>
+				<div class="modal-body">
+					<input style="margin-bottom: 10px;" class="form-control" type="text" placeholder="User" ng-model="admin.user" required>
+					<input class="form-control" type="password" placeholder="Password" ng-model="admin.password"required>
+				</div>
 
-			<div class="modal-footer">
-				<button type="submit" ng-click="login()" class="btn btn-primary btn-lg btn-block">Login</button>
-			</div>
+				<div class="modal-footer">
+					<button type="submit" ng-click="login()" class="btn btn-primary btn-lg btn-block">Login</button>
+				</div>
+			</div> <!-- Modal Content -->
+
 		</div>
-
-	</div>
-</div>
+	</div> <!-- Login Modal -->
 
 </div>

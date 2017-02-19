@@ -32,7 +32,6 @@ beachLiveApp.controller('main_controller', function($scope, data){
 			$('#loginModal').modal('toggle') 
 		} else {
 			$scope.failed = true;
-			// $scope.$apply();
 			console.log("Failed Login");
 		}
 	}
