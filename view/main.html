@@ -1,12 +1,12 @@
 <div id="main" ng-controller="main_controller">
 	<div id="menu-bar">
 		<div id="menu-tab">
-			<a ng-repeat="(name, url) in tab" ui-sref="{{url}}" >{{name}}</a>
+			<a ng-repeat="(name, url) in tab" ui-sref="{{url}}" ui-sref-active="active">{{name}}</a>
 		</div>
 	</div> <!-- Menu Bar -->
 
 
-	<div class="container" style="background: ; height: 80%; overflow-y: auto; overflow-x: hidden;">
+	<div class="container" style="background: ; height: 85%; overflow-y: auto; overflow-x: hidden;">
 
 		<ui-view></ui-view>
 
