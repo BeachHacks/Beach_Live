@@ -4,6 +4,8 @@ beachLiveApp.service('AngFirebase', function() {
 
     var user = firebase.auth().currentUser;
 
+    var anno_message = [];
+
     var anno_callbacks = [];
 
     var login = function(_userName, _password){
@@ -119,16 +121,23 @@ beachLiveApp.service('AngFirebase', function() {
             };
             updateMsg.unshift(msg);
         }
+
+        anno_message = updateMsg;
         
         for(var i = 0; i < anno_callbacks.length; i++){
-            anno_callbacks[i](updateMsg);
+            anno_callbacks[i]();
         }
     });
+
+    var getAnnouncement = function(){
+        return anno_message;
+    }
     
     var service = {
         login               : login,
         checkLogin          : checkLogin,
         writeAnnouncement   : writeAnnouncement,
+        getAnnouncement     : getAnnouncement,
         onAnnouncement      : function(_callback){ anno_callbacks.push(_callback);},
         logout              : logout
     };

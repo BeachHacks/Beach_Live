@@ -2,7 +2,8 @@ beachLiveApp.controller('admin_controller', function($scope, data, AngFirebase, 
 
 	$scope.tab = data.tab;
 	$scope.data = data;
-	$scope.content = null;
+	$scope.content = AngFirebase.getAnnouncement();
+	// $scope.content = null;
 	
 	/** Start Script **/
 
@@ -26,9 +27,18 @@ beachLiveApp.controller('admin_controller', function($scope, data, AngFirebase, 
 		$state.go("public.announcement");
 	}
 
-	AngFirebase.onAnnouncement(function(_announcement){
-		$scope.content = _announcement;
+
+	// AngFirebase.onAnnouncement(function(_announcement){
+	// 	$scope.content = _announcement;
+	// 	console.log($scope.content);
+	// 	$scope.$apply();
+	// });
+
+	AngFirebase.onAnnouncement(function(){
+		$scope.content = AngFirebase.getAnnouncement();
 		// console.log($scope.content);
-		// $scope.$apply();
-	});
+		if(!$scope.$$phase) {
+			$scope.$apply();
+		}
+	})
 });
