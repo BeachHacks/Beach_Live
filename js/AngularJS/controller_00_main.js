@@ -3,7 +3,6 @@ beachLiveApp.controller('main_controller', function($scope, data, AngFirebase, $
 	$scope.data = data;
 
 
-
 /** Admin Login **/
 
 	$scope.failed = false;

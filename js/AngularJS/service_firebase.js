@@ -4,6 +4,8 @@ beachLiveApp.service('AngFirebase', function() {
 
     var user = firebase.auth().currentUser;
 
+    var anno_callbacks = [];
+
     var login = function(_userName, _password){
 
         firebase.auth().signInWithEmailAndPassword(_userName+"@beachlive.com", _password).catch(function(error) {
@@ -40,18 +42,22 @@ beachLiveApp.service('AngFirebase', function() {
     }
 
     var writeAnnouncement = function(_message){
-        var curTimeStamp = Math.floor(Date.now()/1000);
+        var curTimestamp = Math.floor(Date.now()/1000);
 
-        var newPostKey = firebase.database().ref().child('posts').push().key;
+        // var newPostKey = firebase.database().ref().child('posts').push().key;
 
         var update = {};
 
-        update[newPostKey] = {
-            "timeStamp"     : curTimeStamp,
-                "message"       : _message
-        }
+        // update[newPostKey] = {
+        //     "timeStamp"     : curTimeStamp,
+        //         "message"       : _message
+        // }
 
-        firebase.database().ref("/announcement").update(update);
+        // firebase.database().ref("/announcement").update(update);
+        firebase.database().ref("/announcement").push({
+            "timestamp"     : curTimestamp,
+                "message"       : _message
+        })
     }
 
     var checkLogin = function(){
@@ -63,6 +69,37 @@ beachLiveApp.service('AngFirebase', function() {
         }
     }
 
+    // var getAnnouncement = function(){
+    //     var announcement = [{
+    //         timestamp: "holder",
+    //         message: "holder"
+    //     }]
+    //     // console.log(content);
+
+    //     // ref.child('users').orderByKey()
+    //     // firebase.database().ref('/announcement').on('value', function(snapshot){
+    //     //     // console.log(snapshot.val())
+    //     //     var updateMsg = [];
+    //     //     var snapshotContent = snapshot.val();
+    //     //     for (var key in snapshotContent){
+    //     //         var msg = {
+    //     //             timestamp : snapshotContent[key].timestamp,
+    //     //             message : snapshotContent[key].message
+    //     //         };
+    //     //         updateMsg.unshift(msg);
+    //     //     }
+    //     //     console.log(updateMsg);
+    //     //     announcement = updateMsg;
+    //     // });
+
+    //     firebase.database().ref('/announcement').once('value').then(function(snapshot) {
+    //         var snapshotContent = snapshot.val();
+    //         console.log(snapshotContent); 
+    //     })
+    //     return announcement;
+
+    // }
+
     var logout = function(){
         firebase.auth().signOut().then(function() {
           // Sign-out successful.
@@ -70,11 +107,29 @@ beachLiveApp.service('AngFirebase', function() {
           // An error happened.
         });
     }
+
+    firebase.database().ref('/announcement').on('value', function(snapshot){
+        // console.log(snapshot.val())
+        var updateMsg = [];
+        var snapshotContent = snapshot.val();
+        for (var key in snapshotContent){
+            var msg = {
+                timestamp : snapshotContent[key].timestamp,
+                message : snapshotContent[key].message
+            };
+            updateMsg.unshift(msg);
+        }
+        
+        for(var i = 0; i < anno_callbacks.length; i++){
+            anno_callbacks[i](updateMsg);
+        }
+    });
     
     var service = {
         login               : login,
         checkLogin          : checkLogin,
         writeAnnouncement   : writeAnnouncement,
+        onAnnouncement      : function(_callback){ anno_callbacks.push(_callback);},
         logout              : logout
     };
 

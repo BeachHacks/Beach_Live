@@ -1,14 +1,10 @@
-beachLiveApp.controller('announcement_controller', function($scope, data){
-	$scope.content = data.anouncement_content;
+beachLiveApp.controller('announcement_controller', function($scope, data, AngFirebase){
+	$scope.content = null;// data.announcement_content();
 
+	AngFirebase.onAnnouncement(function(_announcement){
+		$scope.content = _announcement;
+		console.log($scope.content);
+		$scope.$apply();
+	});
 
-	/** Announcement Admin **/
-	$scope.deleteAnnouncement = function(_index){
-		console.log(_index);
-	}
-
-	$scope.announce = function(){
-		console.log($scope.message)
-		$scope.message = "";
-	}
 });

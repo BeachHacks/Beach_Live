@@ -2,7 +2,7 @@ beachLiveApp.controller('admin_controller', function($scope, data, AngFirebase, 
 
 	$scope.tab = data.tab;
 	$scope.data = data;
-	$scope.content = data.anouncement_content;
+	$scope.content = null;
 	
 	/** Start Script **/
 
@@ -25,4 +25,10 @@ beachLiveApp.controller('admin_controller', function($scope, data, AngFirebase, 
 		AngFirebase.logout();
 		$state.go("public.announcement");
 	}
+
+	AngFirebase.onAnnouncement(function(_announcement){
+		$scope.content = _announcement;
+		// console.log($scope.content);
+		// $scope.$apply();
+	});
 });
