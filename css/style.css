@@ -63,13 +63,21 @@ html, body{
 	padding: 1.5% 2% 1.5% 3%;
 	color: #ECF0F1;
 	font-weight: 700;
-	width: 12.3333% !important;
+	/*width: 12.3333% !important;*/
+	width: 10% !important;
 }
 
 .box-message{
 	padding: 1.5% 3% 1.5% 2%;
 	color: #ECF0F1;
-	width: 86.6667% !important;
+	/*width: 86.6667% !important;*/
+	width: 81% !important;
+}
+
+.box-button{
+	text-align: right;
+	height: auto;
+	padding: 1.5% 3% 1.5% 2%;
 }
 
 .announcement-content div{
