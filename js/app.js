@@ -12,10 +12,10 @@ firebase.initializeApp(config);
 
 var database = firebase.database();
 
-database.ref('users/'+"123").set({
-	username: "testName",
-	email: "email"
-});
+// database.ref('users/'+"123").set({
+// 	username: "testName",
+// 	email: "email"
+// });
 
 /** Firebase **/
 
@@ -24,29 +24,49 @@ var beachLiveApp = angular.module("beachLive", ["firebase", "ui.router"]);
 
 beachLiveApp.config(function($stateProvider, $urlRouterProvider){
 
-	$urlRouterProvider.otherwise('/anouncement');
+	$urlRouterProvider.otherwise('/');
+
 
 
 	$stateProvider
-		.state("anouncement", {
-			url: '/anouncement',
+
+		.state("public", {
+			url:"/",
+			templateUrl: "view/main.html",
+			controller: "main_controller"		
+		})
+
+		.state("public.announcement", {
+			url: 'anouncement',
 			templateUrl: "view/announcement.html",
 			controller: "announcement_controller"
 
 		})
 
-		.state("map",{
-			url: '/map',
+		.state("public.map",{
+			url: 'map',
 			templateUrl: "view/map.html",
 			controller: ""
 		})
 
-		.state("mentor", {
-			url: "/mentor",
+		.state("public.mentor", {
+			url: "mentor",
 			templateUrl: "view/mentor.html",
 			controller: ""
 		})
-		
+
+		.state("admin", {
+			url: "/admin",
+			templateUrl: "view/admin/admin_main.html",
+			controller: "admin_controller"
+		})
+
+		.state("admin.announcement", {
+			url: "/announcement",
+			templateUrl: "view/admin/admin_announcement.html",
+			controller: ""
+		})
+
 	// var helloState = {
  //    name: 'hello',
  //    url: '/',

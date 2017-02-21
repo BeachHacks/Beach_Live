@@ -1,26 +1,11 @@
 <div class="row" style="">
 	<div style="background:;  ">
 
-		<!-- Announcement admin -->
-		<div class="box container" ng-show="adminAccess">
-			<!-- For Admin -->
-			<div style="padding: 5px;">
-				<div> Announcement </div>
-				<textarea style="resize: none; height: 150px; width: 500px;" ng-model="message" name="Text1" cols="40" rows="5"></textarea>
-				<div>
-					<button class="btn" ng-click="announce()">Announce!</button>
-				</div>
-			</div>
-		</div>
-
 		<!-- Announcement Message Box -->
 		<div class="box row" ng-repeat="c in content">
 			<div class="box-timestamp col-md-1">{{c.timestamp}}</div>
-			<div class="box-message col-md-10">{{c.message}}</div>
-			<!-- <div class="col-md-1" style="text-align: left;">X</div> -->
-			<div class="box-button col-md-1" ng-show="adminAccess" ng-click="deleteAnnouncement(content.indexOf(c))">
-				<button class="btn btn-danger">X</button>
-			</div>
+			<div class="box-message col-md-11">{{c.message}}</div>
 		</div> <!-- Announcement Message Box -->
+
 	</div>
 </div>

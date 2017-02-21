@@ -4,7 +4,7 @@ beachLiveApp.service('data', function() {
     var data = {
     	test: "test String",
     	tab: {
-    		ANNOUCEMENTS	: "anouncement",
+    		ANNOUCEMENTS	: "announcement",
     		MAP				: "map",
     		MENTOR			: "mentor",
     		HARDWARE		: "test",
