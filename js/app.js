@@ -9,6 +9,7 @@ var config = {
 	};
 firebase.initializeApp(config);
 
+
 var database = firebase.database();
 
 database.ref('users/'+"123").set({
@@ -45,6 +46,7 @@ beachLiveApp.config(function($stateProvider, $urlRouterProvider){
 			templateUrl: "view/mentor.html",
 			controller: ""
 		})
+		
 	// var helloState = {
  //    name: 'hello',
  //    url: '/',

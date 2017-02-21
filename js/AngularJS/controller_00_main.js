@@ -17,22 +17,40 @@ beachLiveApp.controller('main_controller', function($scope, data){
 		password: "1234"
 	}
 
-	$scope.admin = {
-		user: "userName",
-		password: "password"
-	}
+	// $scope.admin = {
+	// 	user: "userName",
+	// 	password: "password"
+	// }
 
-	$scope.login = function(){
+	$scope.login = function(_userName, _password){
 		// console.log($scope.admin.user);
 		// console.log($scope.admin.password);
-		if($scope.admin.user == admin_auth.user && $scope.admin.password == admin_auth.password){
-			console.log("Logged In");
-			$scope.adminAccess = true;
-			$scope.failed = false;
-			$('#loginModal').modal('toggle') 
+		firebase.auth().signInWithEmailAndPassword(_userName+"@beachlive.com", _password).catch(function(error) {
+		  // Handle Errors here.
+		  // var errorCode = error.code;
+		  // var errorMessage = error.message;
+		});
+
+		var user = firebase.auth().currentUser;
+
+		if (user) {
+		  // User is signed in.
 		} else {
-			$scope.failed = true;
-			console.log("Failed Login");
+		  // No user is signed in.
 		}
+
+		
+		// if($scope.admin.user == admin_auth.user && $scope.admin.password == admin_auth.password){
+		// 	console.log("Logged In");
+		// 	$scope.adminAccess = true;
+		// 	$scope.failed = false;
+		// 	$('#loginModal').modal('toggle') 
+		// } else {
+		// 	$scope.failed = true;
+		// 	console.log("Failed Login");
+		// }
+		// Clear  
+		$scope.admin.user = "";
+		$scope.admin.password = "";
 	}
 });
