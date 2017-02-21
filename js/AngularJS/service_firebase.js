@@ -40,10 +40,18 @@ beachLiveApp.service('AngFirebase', function() {
     }
 
     var writeAnnouncement = function(_message){
-        var timeStamp = Math.floor(Date.now());
-        console.log(timeStamp);
-        console.log(_message);
+        var curTimeStamp = Math.floor(Date.now()/1000);
 
+        var newPostKey = firebase.database().ref().child('posts').push().key;
+
+        var update = {};
+
+        update[newPostKey] = {
+            "timeStamp"     : curTimeStamp,
+                "message"       : _message
+        }
+
+        firebase.database().ref("/announcement").update(update);
     }
 
     var checkLogin = function(){
