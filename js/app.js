@@ -10,7 +10,7 @@ var config = {
 firebase.initializeApp(config);
 
 
-var database = firebase.database();
+// var database = firebase.database();
 
 // database.ref('users/'+"123").set({
 // 	username: "testName",
@@ -64,7 +64,7 @@ beachLiveApp.config(function($stateProvider, $urlRouterProvider){
 		.state("admin.announcement", {
 			url: "/announcement",
 			templateUrl: "view/admin/admin_announcement.html",
-			controller: ""
+			controller: "admin_controller"
 		})
 
 	// var helloState = {

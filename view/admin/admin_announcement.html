@@ -14,8 +14,7 @@
 <div class="box row" ng-repeat="c in content">
 	<div class="box-timestamp col-md-1">{{c.timestamp}}</div>
 	<div class="box-message col-md-10">{{c.message}}</div>
-	<div class="col-md-1" style="text-align: left;">X</div>
-	<div class="box-button col-md-1" ng-show="adminAccess" ng-click="deleteAnnouncement(content.indexOf(c))">
+	<div class="box-button col-md-1" ng-click="deleteAnnouncement(content.indexOf(c))">
 		<button class="btn btn-danger">X</button>
 	</div>
 </div> <!-- Announcement Message Box -->

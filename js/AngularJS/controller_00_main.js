@@ -25,7 +25,7 @@ beachLiveApp.controller('main_controller', function($scope, data, AngFirebase, $
 			}, 1000);
 		} else {
 			$scope.failed = true;
-         console.log("Failed Login");
+         	console.log("Failed Login");
 		}
 		// Clear  
 		$scope.admin.user = "";
