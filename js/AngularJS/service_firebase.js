@@ -1,4 +1,7 @@
+var month = ['JAN', 'FEB', 'MAR', 'APR', 'MAY', 'JUN','JUL', 'AUG', 'SEPT', 'OCT', 'NOV', 'DEC'];
+
 beachLiveApp.service('AngFirebase', function() {
+
 
     var database = firebase.database();
 
@@ -46,7 +49,7 @@ beachLiveApp.service('AngFirebase', function() {
     }
 
     var writeAnnouncement = function(_message){
-        var curTimestamp = Math.floor(Date.now()/1000);
+        var curTimestamp = Math.floor(Date.now());
 
         // var newPostKey = firebase.database().ref().child('posts').push().key;
 
@@ -89,7 +92,7 @@ beachLiveApp.service('AngFirebase', function() {
         var snapshotContent = snapshot.val();
         for (var key in snapshotContent){
             var msg = {
-                timestamp : snapshotContent[key].timestamp,
+                timestamp : convertTime(snapshotContent[key].timestamp),
                 message : snapshotContent[key].message,
                 "key"   : key
             };
@@ -124,3 +127,22 @@ beachLiveApp.service('AngFirebase', function() {
 
     return service;
 });
+
+
+
+
+function convertTime(_date){
+    var date = new Date(_date);
+    var hours = date.getHours();
+    var minutes = date.getMinutes();
+    var ampm = hours >= 12 ? 'pm' : 'am'
+    hours = hours % 12;
+    hours = hours ? hours : 12; // the hour '0' should be '12'
+    minutes = minutes < 10 ? '0'+minutes : minutes;
+    var time =  month[date.getMonth()] + ' ' + date.getDate() + ', ' + hours + ':' + minutes + ' ' + ampm
+    // console.log(time);
+    // console.log(date);
+    // console.log(date.getMonth());
+    return time;
+}
+
