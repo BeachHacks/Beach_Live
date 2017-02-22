@@ -12,8 +12,10 @@ beachLiveApp.service('AngFirebase', function() {
 
         firebase.auth().signInWithEmailAndPassword(_userName+"@beachlive.com", _password).catch(function(error) {
           // Handle Errors here.
-          // var errorCode = error.code;
-          // var errorMessage = error.message;
+          var errorCode = error.code;
+          var errorMessage = error.message;
+          logout();
+          // console.log(errorMessage);
         });
 
         user = firebase.auth().currentUser;
@@ -110,6 +112,8 @@ beachLiveApp.service('AngFirebase', function() {
         });
     }
 
+    // EventListenner for when announcement data changed
+    // Will Trigger callback to whom ever registered
     firebase.database().ref('/announcement').on('value', function(snapshot){
         // console.log(snapshot.val())
         var updateMsg = [];
@@ -117,13 +121,15 @@ beachLiveApp.service('AngFirebase', function() {
         for (var key in snapshotContent){
             var msg = {
                 timestamp : snapshotContent[key].timestamp,
-                message : snapshotContent[key].message
+                message : snapshotContent[key].message,
+                "key"   : key
             };
             updateMsg.unshift(msg);
         }
 
         anno_message = updateMsg;
         
+        // Trigger callbacks
         for(var i = 0; i < anno_callbacks.length; i++){
             anno_callbacks[i]();
         }
