@@ -73,37 +73,6 @@ beachLiveApp.service('AngFirebase', function() {
         }
     }
 
-    // var getAnnouncement = function(){
-    //     var announcement = [{
-    //         timestamp: "holder",
-    //         message: "holder"
-    //     }]
-    //     // console.log(content);
-
-    //     // ref.child('users').orderByKey()
-    //     // firebase.database().ref('/announcement').on('value', function(snapshot){
-    //     //     // console.log(snapshot.val())
-    //     //     var updateMsg = [];
-    //     //     var snapshotContent = snapshot.val();
-    //     //     for (var key in snapshotContent){
-    //     //         var msg = {
-    //     //             timestamp : snapshotContent[key].timestamp,
-    //     //             message : snapshotContent[key].message
-    //     //         };
-    //     //         updateMsg.unshift(msg);
-    //     //     }
-    //     //     console.log(updateMsg);
-    //     //     announcement = updateMsg;
-    //     // });
-
-    //     firebase.database().ref('/announcement').once('value').then(function(snapshot) {
-    //         var snapshotContent = snapshot.val();
-    //         console.log(snapshotContent); 
-    //     })
-    //     return announcement;
-
-    // }
-
     var logout = function(){
         firebase.auth().signOut().then(function() {
           // Sign-out successful.
@@ -138,12 +107,17 @@ beachLiveApp.service('AngFirebase', function() {
     var getAnnouncement = function(){
         return anno_message;
     }
+
+    var deleteAnnouncement = function(_key){
+        firebase.database().ref('/announcement/'+ _key).remove();
+    }
     
     var service = {
         login               : login,
         checkLogin          : checkLogin,
         writeAnnouncement   : writeAnnouncement,
         getAnnouncement     : getAnnouncement,
+        deleteAnnouncement  : deleteAnnouncement,
         onAnnouncement      : function(_callback){ anno_callbacks.push(_callback);},
         logout              : logout
     };
