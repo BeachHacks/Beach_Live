@@ -11,7 +11,7 @@ beachLiveApp.service('AngFirebase', function() {
 
     var anno_callbacks = [];
 
-    var login = function(_userName, _password){
+    var login = function(_userName, _password, _callback){
 
         firebase.auth().signInWithEmailAndPassword(_userName+"@beachlive.com", _password).catch(function(error) {
           // Handle Errors here.
@@ -21,13 +21,16 @@ beachLiveApp.service('AngFirebase', function() {
           // console.log(errorMessage);
         });
 
-        user = firebase.auth().currentUser;
-        if(user){
-            return true;
-        } else {
-            return false;
-        }
+        // user = firebase.auth().currentUser;
+        // if(user){
+        //     return true;
+        // } else {
+        //     return false;
+        // }
 
+        firebase.auth().onAuthStateChanged(function(user){
+            _callback(user);
+        });
 
 
         /** Fake Login **/
