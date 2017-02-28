@@ -52,7 +52,7 @@ beachLiveApp.config(function($stateProvider, $urlRouterProvider){
 		.state("public.mentor", {
 			url: "mentor",
 			templateUrl: "view/mentor.html",
-			controller: ""
+			controller: "mentor_controller"
 		})
 
 		.state("admin", {
