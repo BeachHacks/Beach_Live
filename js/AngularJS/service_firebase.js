@@ -90,7 +90,6 @@ beachLiveApp.service('AngFirebase', function() {
     // EventListenner for when announcement data changed
     // Will Trigger callback to whom ever registered
     firebase.database().ref('/announcement').on('value', function(snapshot){
-        // console.log(snapshot.val())
         var updateMsg = [];
         var snapshotContent = snapshot.val();
         for (var key in snapshotContent){
@@ -103,7 +102,6 @@ beachLiveApp.service('AngFirebase', function() {
         }
 
         anno_message = updateMsg;
-        
         // Trigger callbacks
         for(var i = 0; i < anno_callbacks.length; i++){
             anno_callbacks[i]();
@@ -142,10 +140,14 @@ function convertTime(_date){
     hours = hours % 12;
     hours = hours ? hours : 12; // the hour '0' should be '12'
     minutes = minutes < 10 ? '0'+minutes : minutes;
-    var time =  month[date.getMonth()] + ' ' + date.getDate() + ', ' + hours + ':' + minutes + ' ' + ampm
+    // var time =  month[date.getMonth()] + ' ' + date.getDate() + ', ' + hours + ':' + minutes + ' ' + ampm;
+    var timeStamp = {
+        date: month[date.getMonth()] + ' ' + date.getDate(),
+        time: hours + ':' + minutes + ' ' + ampm
+    }
     // console.log(time);
     // console.log(date);
     // console.log(date.getMonth());
-    return time;
+    return timeStamp;
 }
 
