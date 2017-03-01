@@ -64,14 +64,14 @@ html, body{
 	color: #ECF0F1;
 	font-weight: 700;
 	/*width: 12.3333% !important;*/
-	width: 10% !important;
+	width: 15% !important;
 }
 
 .box-message{
 	padding: 1.5% 3% 1.5% 2%;
 	color: #ECF0F1;
-	/*width: 86.6667% !important;*/
-	width: 81% !important;
+	width: 86.6667% !important;
+	width: 75% !important;
 }
 
 .box-button{
