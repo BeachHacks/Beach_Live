@@ -28,7 +28,15 @@
 
 
     <!-- <div ng-include src="'view/main.html'" style="height: 100%" ></div> -->
-    <ui-view></ui-view>
+    <div id="wrapper">
+        <div id="sidebar" >
+            <div style="height: 100%;" ng-include="'view/sidebar.html'"></div>
+        </div>
+        <div id="content-page">
+            <ui-view></ui-view>
+        </div>
+        
+    </div>
     
 
     <!-- jQuery -->
