@@ -3,10 +3,42 @@ html, body{
 	height: 100%;
 }
 
+
+/** Flex CSS **/
+#wrapper{
+	display: flex;
+	flex-direction: row;
+	flex: 1;
+}
+
+#sidebar{
+	height: 100%;
+	width: 400px;
+	background-color: #F8CD53;
+	position: fixed;
+}
+
+#content-page{
+	margin-left: 400px;
+	width: 100%;
+}
+
+/****************/
+
+
 #main{
 	height: 100%;
-	background: #F8CD53;/*
+	/*background: #F8CD53;*/
+	/*
 	background-attachment:fixed;*/
+}
+
+/** Menu Bar **/
+#menu-bar{
+	position: fixed;
+	margin-top: -100px;
+	width: 80%;
+	background-color: white;
 }
 
 #menu-tab{
@@ -17,7 +49,7 @@ html, body{
 
 .activePage{
 
-    background: white; 
+    background: #F8CD53; 
 }
 
 #menu-tab a{
@@ -42,12 +74,19 @@ html, body{
 	text-decoration: none;
 }
 
+/*************/
+
+#view-content{
+	/*margin-top: 100px;*/
+}
+
 #campus-map{
 	/*background-image:url('../campusMap.pdf');*/
 	height: 100px;
 	/*background-image:url('https://sbloom2.files.wordpress.com/2016/03/b0936-testimages.jpeg?w=400&h=265');*/
 }
 
+/** Announcement Page **/
 .box{
 
 	width: 100%;
@@ -84,4 +123,15 @@ html, body{
 	padding: 10px;
 	background: white;
 	color:black;
+}
+
+/****************/
+
+/** Side Bar **/
+#sidebar .wrapper{
+	text-align: center
+}
+#sidebar-logo{
+	max-width:100%;
+	max-height:100%;
 }
