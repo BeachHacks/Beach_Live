@@ -21,6 +21,9 @@ html, body{
 #content-page{
 	margin-left: 400px;
 	width: 100%;
+	float: right;
+	/*width: 80%;*/
+	overflow-x: hidden;
 }
 
 /****************/
@@ -77,7 +80,7 @@ html, body{
 /*************/
 
 #view-content{
-	/*margin-top: 100px;*/
+	margin-top: 100px;
 }
 
 #campus-map{
