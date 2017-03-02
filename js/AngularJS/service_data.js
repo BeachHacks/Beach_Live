@@ -6,6 +6,7 @@ beachLiveApp.service('data', ['AngFirebase', function(AngFirebase) {
     	test: "test String",
     	tab: {
     		ANNOUCEMENTS	: "announcement",
+            SCHEDULE        : "schedule",
     		MAP				: "map",
     		MENTOR			: "mentor",
     		HARDWARE		: "test",

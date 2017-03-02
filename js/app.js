@@ -43,6 +43,12 @@ beachLiveApp.config(function($stateProvider, $urlRouterProvider){
 
 		})
 
+		.state("public.schedule", {
+			url: "schedule",
+			templateUrl: "view/schedule.html",
+			controller: "schedule_controller"
+		})
+
 		.state("public.map",{
 			url: 'map',
 			templateUrl: "view/map.html",
