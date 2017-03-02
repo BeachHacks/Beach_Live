@@ -142,4 +142,21 @@ html, body{
 
 /** Schedule **/
 
+.schedule-calendar-hour{
+	border-top: 1px solid;
+	height: 120px;
+	position: relative;
+}
+
+.schedule-calendar-hour .hour{
+	position: absolute;
+	font-size: 12px;
+	line-height: 18px;
+	opacity: 0.5;
+	top: -9px;
+	left: -72px;
+	width: 60px;
+	text-align: right;
+	font-weight: 700;
+}
 /**************/
