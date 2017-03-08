@@ -1,7 +1,7 @@
 beachLiveApp.controller('login_controller', function($scope, AngFirebase, $state){
 
 	/** Admin Login **/
-
+	$scope.checkLogin = AngFirebase.checkLogin;
 	$scope.failed = false;
 
 	$scope.login = function(_userName, _password){
@@ -33,5 +33,10 @@ beachLiveApp.controller('login_controller', function($scope, AngFirebase, $state
 				$scope.$apply();
 			}
 		}); 
-	}
+	};
+
+	$scope.logout = function(){
+		AngFirebase.logout();
+		$state.go("public.announcement");
+	};
 });
