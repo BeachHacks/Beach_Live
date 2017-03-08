@@ -19,6 +19,12 @@ beachLiveApp.service('AngFirebase', function() {
           var errorMessage = error.message;
           logout();
           // console.log(errorMessage);
+        }).then(function(){
+            // firebase.auth().onAuthStateChanged(function(user){
+            // _callback(user);
+            // });
+            user = firebase.auth().currentUser;
+            _callback(user);
         });
 
         // user = firebase.auth().currentUser;
@@ -28,9 +34,9 @@ beachLiveApp.service('AngFirebase', function() {
         //     return false;
         // }
 
-        firebase.auth().onAuthStateChanged(function(user){
-            _callback(user);
-        });
+        // firebase.auth().onAuthStateChanged(function(user){
+        //     _callback(user);
+        // });
 
 
         /** Fake Login **/
