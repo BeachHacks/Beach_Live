@@ -9,6 +9,7 @@ html, body{
 	display: flex;
 	flex-direction: row;
 	flex: 1;
+	height: 100%;
 }
 
 #sidebar{
@@ -27,6 +28,7 @@ html, body{
 
 #content-page{
 	margin-left: 400px;
+	height: 100%;
 	width: 100%;
 	float: right;
 	/*width: 80%;*/
@@ -49,6 +51,7 @@ html, body{
 	margin-top: -100px;
 	width: 80%;
 	background-color: white;
+	z-index: 500;
 }
 
 #menu-tab{
