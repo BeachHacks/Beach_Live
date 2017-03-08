@@ -3,15 +3,18 @@ beachLiveApp.controller('admin_controller', function($scope, data, AngFirebase, 
 	$scope.tab = data.tab;
 	$scope.data = data;
 	$scope.content = AngFirebase.getAnnouncement();
+
 	// $scope.content = null;
 	
 	/** Start Script **/
 
 	// kick peple if they are not logged in
-	if(!AngFirebase.checkLogin()){
-		AngFirebase.logout(); // Just to make sure
-		$state.go("public.announcement");
-	}
+	// Note: User does not keep their session when refresh
+	// if(!AngFirebase.checkLogin()){
+	// 	// console.log("loged out");
+	// 	AngFirebase.logout(); // Just to make sure
+	// 	$state.go("public.announcement");
+	// }
 
 
 	$scope.delete = function(_key){
@@ -24,10 +27,6 @@ beachLiveApp.controller('admin_controller', function($scope, data, AngFirebase, 
 		$scope.message = "";
 	}
 
-	$scope.logout = function(){
-		AngFirebase.logout();
-		$state.go("public.announcement");
-	}
 
 
 	// AngFirebase.onAnnouncement(function(_announcement){

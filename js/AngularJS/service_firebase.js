@@ -87,10 +87,12 @@ beachLiveApp.service('AngFirebase', function() {
 
     var logout = function(){
         firebase.auth().signOut().then(function() {
-          // Sign-out successful.
-        }, function(error) {
-          // An error happened.
-        });
+              // Sign-out successful.
+              user = null;
+            }, function(error) {
+              // An error happened.
+            }
+        );
     }
 
     // EventListenner for when announcement data changed
