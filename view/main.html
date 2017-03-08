@@ -10,11 +10,10 @@
 		<ui-view></ui-view>
 	</div>
 
-	<!-- Trigger the modal with a button -->
-	<button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#loginModal">HIDE THIS LOGIN BUTTON</button>
+
 
 	<!-- Login Modal -->
-	<div id="loginModal" class="modal fade" role="dialog">
+	<div id="loginModal" class="modal fade" role="dialog" ng-controller="login_controller">
 		<div class="modal-dialog">
 			<!-- Modal content-->
 			<div class="modal-content">
