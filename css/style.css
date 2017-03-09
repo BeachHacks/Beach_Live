@@ -103,7 +103,9 @@ html, body{
 .box{
 
 	width: 100%;
-	background: transparent linear-gradient(to right bottom, #3498DB, #2992D8) repeat scroll 0% 0%;
+	/*background: transparent linear-gradient(to right bottom, #3498DB, #2992D8) repeat scroll 0% 0%;*/
+	/*#F8CD53*/
+	background: transparent linear-gradient(to right bottom, #F8CD53, #F8CD53) repeat scroll 0% 0%;
 	border-radius: 2px;
 	color: #34495E;
 	margin-bottom: 2.5%;
@@ -113,7 +115,8 @@ html, body{
 
 .box-timestamp{
 	padding: 1.5% 2% 1.5% 3%;
-	color: #ECF0F1;
+	/*color: #ECF0F1;*/
+	color: black;
 	font-weight: 700;
 	/*width: 12.3333% !important;*/
 	width: 15% !important;
@@ -121,7 +124,8 @@ html, body{
 
 .box-message{
 	padding: 1.5% 3% 1.5% 2%;
-	color: #ECF0F1;
+	/*color: #ECF0F1;*/
+	color: black;
 	width: 86.6667% !important;
 	width: 75% !important;
 }
