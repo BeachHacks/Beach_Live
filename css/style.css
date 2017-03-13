@@ -16,15 +16,18 @@ html, body{
 	height: 100%;
 	width: 400px;
 	position: fixed;
-
+	background: yellow;
+	/*background-image: url("../asset/img/csulbTower.jpg");*/
 	/*background-color: #F8CD53;*/
 	background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.4)), url("../asset/img/csulbTower.jpg");
 	background-repeat: no-repeat;
-	background-attachment:fixed;
-	background-position	: auto auto;
-	background-size: 35% 100%;
+	background-size: cover;
+	/*background-attachment:fixed;*/
+	/*background-position	: auto auto;*/
+	/*background-size: 35% 100%;*/
 
 }
+
 
 #content-page{
 	margin-left: 400px;
