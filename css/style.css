@@ -94,6 +94,7 @@ html, body{
 
 #view-content{
 	margin-top: 100px;
+	width: 95%;
 }
 
 #campus-map{
@@ -168,7 +169,17 @@ html, body{
 .schedule-calendar-hour{
 	border-top: 1px solid rgba(0,0,0,0.1);
 	height: 120px;
+	width: 90%;
+	float: right;
 	position: relative;
+}
+
+.schedule-calendar-hour::after {
+    content: "";
+    border-top: 1px dotted rgba(0, 0, 0, 0.1);
+    position: absolute;
+    top: 59px;
+    width: 100%;
 }
 
 .schedule-calendar-hour .hour{
@@ -177,7 +188,7 @@ html, body{
 	line-height: 18px;
 	opacity: 0.5;
 	top: -9px;
-	left: -72px;
+	left: -85px;
 	width: 60px;
 	text-align: right;
 	font-weight: 700;
