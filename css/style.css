@@ -116,7 +116,7 @@ html, body{
 .box-timestamp{
 	padding: 1.5% 2% 1.5% 3%;
 	/*color: #ECF0F1;*/
-	color: black;
+	color: black	;
 	font-weight: 700;
 	/*width: 12.3333% !important;*/
 	width: 15% !important;
@@ -180,3 +180,15 @@ html, body{
 	font-weight: 700;
 }
 /**************/
+
+
+/** Small Screen **/
+@media screen and (max-width: 990px) {
+    /*body {
+        background-color: lightgreen;
+    }*/
+    #content-page{
+    	margin-left: 0;
+    }
+
+}
