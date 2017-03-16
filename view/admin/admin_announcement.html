@@ -13,12 +13,12 @@
 
 <!-- Announcement Message Box -->
 <div class="box row" ng-repeat="c in content">
-	<div class="box-timestamp col-md-1">
+	<div class="box-timestamp col-xs-1 col-sm-1 col-md-1 col-lg-1">
 		<div>{{c.timestamp.date}}</div>
 		<div>{{c.timestamp.time}}</div>
 	</div>
-	<div class="box-message col-md-10">{{c.message}}</div>
-	<div class="box-button col-md-1" >
+	<div class="box-message col-xs-10 col-sm-10 col-md-10 col-lg-10">{{c.message}}</div>
+	<div class="box-button col-xs-1 col-sm-1 col-md-1 col-lg-1" >
 		<button class="btn btn-danger" ng-click="delete(c.key)">X</button>
 	</div>
 </div> <!-- Announcement Message Box -->
