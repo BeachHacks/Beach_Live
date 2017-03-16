@@ -52,13 +52,13 @@ html, body{
 #menu-bar{
 	position: fixed;
 	margin-top: -100px;
-	width: 80%;
+	width: 100%;
 	background-color: white;
 	z-index: 500;
 }
 
 #menu-tab{
-	text-align: center;
+	/*text-align: center;*/
 	padding: 30px;
 	/*background: red;*/
 }
