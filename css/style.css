@@ -205,4 +205,8 @@ html, body{
     	margin-left: 0;
     }
 
+    #sidebar{
+    	display:none;
+    }
+
 }

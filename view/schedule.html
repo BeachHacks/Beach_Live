@@ -1,43 +1,7 @@
-<div id="schedule" style="height: 5880px;">
+<div id="schedule" style="">
 	<div id="schedule-calendar">
-		<div class="schedule-calendar-hour">
-			<div class="hour"> FRI 6pm</div>
-		</div>
-		<div class="schedule-calendar-hour">
-			<div class="hour"> FRI 6pm</div>
-		</div>
-		<div class="schedule-calendar-hour">
-			<div class="hour"> FRI 6pm</div>
-		</div>
-		<div class="schedule-calendar-hour">
-			<div class="hour"> FRI 6pm</div>
-		</div>
-		<div class="schedule-calendar-hour">
-			<div class="hour"> FRI 6pm</div>
-		</div>
-		<div class="schedule-calendar-hour">
-			<div class="hour"> FRI 6pm</div>
-		</div>
-		<div class="schedule-calendar-hour">
-			<div class="hour"> FRI 6pm</div>
-		</div>
-		<div class="schedule-calendar-hour">
-			<div class="hour"> FRI 6pm</div>
-		</div>
-		<div class="schedule-calendar-hour">
-			<div class="hour"> FRI 6pm</div>
-		</div>
-		<div class="schedule-calendar-hour">
-			<div class="hour"> FRI 6pm</div>
-		</div>
-		<div class="schedule-calendar-hour">
-			<div class="hour"> FRI 6pm</div>
-		</div>
-		<div class="schedule-calendar-hour">
-			<div class="hour"> FRI 6pm</div>
-		</div>
-		<div class="schedule-calendar-hour">
-			<div class="hour"> FRI 6pm</div>
+		<div class="schedule-calendar-hour" ng-repeat="time in schedule">
+			<div class="hour">{{time.day}} {{time.hour}}</div>
 		</div>
 	</div>
 </div>
