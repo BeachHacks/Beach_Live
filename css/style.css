@@ -193,6 +193,21 @@ html, body{
 	text-align: right;
 	font-weight: 700;
 }
+
+.schedule-content{
+	position: relative;
+	width: 90%;
+	float: right;
+}
+
+.schedule-item{
+	height: 120px;
+	background: white;
+	border: solid black;
+	width: 40%;
+	border-radius: 2px;
+	position: absolute;
+}
 /**************/
 
 

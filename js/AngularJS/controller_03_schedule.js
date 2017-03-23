@@ -52,26 +52,6 @@ beachLiveApp.controller('schedule_controller', function($scope, data, AngFirebas
 		return schedule;
 	}
 
-
 	$scope.schedule = createScheduleHour(start_time, end_time);
-	// var date_start = getDate(start_time);
-	// var date_end = getDate(end_time);
-
-	// for(var i = date_start.getTime(); i < date_end.getTime(); i += 3600000){
-	// 	var newDate = new Date(i);
-
-	// 	console.log(newDate.getDate() + " " + newDate.getDay() + " " + newDate.getHours() + " " + newDate.getMinutes());
-	// }
-
-	// console.log(date_start.getTime());
-	// console.log(date_end.getTime());
-
-	// console.log(date_start.getTime());
-	// console.log(date_start);
-	// console.log(date_start.getDate());
-	// console.log(date_start.getDay());
-	// console.log(date_start.getMonth())
-	// console.log(date_start.getHours());
-	// console.log(date_start.getMinutes())
 
 });
