@@ -108,9 +108,12 @@ beachLiveApp.service('AngFirebase', function() {
         firebase.database().ref('/announcement/'+ _key).remove();
     }
 
-    var updateSchedule = function(_json){
+    var updateSchedule = function(_schedule){
         console.log("update")
-        firebase.database().ref("/schedule").update(_json)
+        var obj = {
+            schedule: _schedule
+        }
+        firebase.database().ref("/schedule").update(obj);
     }
 
     var getSchedule = function(){
@@ -142,11 +145,10 @@ beachLiveApp.service('AngFirebase', function() {
     // Will Trigger callback to whom ever registered
     firebase.database().ref('/schedule').on('value', function(snapshot){
         var snapshotContent = snapshot.val();
-        
-        schedule = snapshotContent;
+        schedule = JSON.parse(snapshotContent.schedule);
         // Trigger callbacks
         for(var i = 0; i < schedule_callbacks.length; i++){
-            schedule_callbacks[i](snapshotContent);
+            schedule_callbacks[i]();
         }
     });
 

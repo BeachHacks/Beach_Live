@@ -1,6 +1,6 @@
 beachLiveApp.controller('schedule_controller', function($scope, data, AngFirebase, $state){
 
-	$scope.schedule = null;
+	$scope.schedule = AngFirebase.getSchedule();
 
 	
 	AngFirebase.onScheduleChange(function(){

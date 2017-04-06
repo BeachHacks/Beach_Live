@@ -1,5 +1,8 @@
 <div>
-	<button class="btn" ng-click="upload()">Upload New Schedule</button>
+	<div class="row">
+		<input type="file" id="file" name="file"/>
+		<button ng-click="upload()">Upload New Schedule</button>
+	</div>
 	<a href="{{jsonUrl}}" download="schedule.json">Download Current Schedule</a>
 </div>
 <div id="schedule" class="row">
