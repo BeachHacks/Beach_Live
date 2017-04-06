@@ -95,6 +95,7 @@ html, body{
 #view-content{
 	margin-top: 100px;
 	width: 95%;
+	height: 85%;
 }
 
 #campus-map{
@@ -171,38 +172,44 @@ html, body{
 
 /** Schedule **/
 #schedule{
-	position: relative;
+	background: linear-gradient(330deg, #4C4491 0%, #FD5C63 100%);
+	height: 100%;
 }
-#schedule-calendar{
-	position: absolute;
-	width: 100%;
-}
-.schedule-calendar-hour{
-	border-top: 1px solid rgba(0,0,0,0.1);
-	height: 120px;
-	width: 90%;
-	float: right;
-	position: relative;
+#schedule .date{
+	text-transform: uppercase;
+	margin-left: 34%
 }
 
-.schedule-calendar-hour::after {
-    content: "";
-    border-top: 1px dotted rgba(0, 0, 0, 0.1);
-    position: absolute;
-    top: 59px;
-    width: 100%;
+#schedule ul.date-schedule{
+	display: flex;
+	flex-direction: column;
+	list-style: none;
+	margin: 0;
+	padding: 0;
 }
 
-.schedule-calendar-hour .hour{
-	position: absolute;
-	font-size: 12px;
-	line-height: 18px;
-	opacity: 0.5;
-	top: -9px;
-	left: -85px;
-	width: 60px;
+#schedule ul.date-schedule li{
+	display: flex;
+	justify-content: space-around;
+	margin: 0;
+	padding: 0;
+}
+
+#schedule ul.date-schedule li .time{
+	width: 34%;
 	text-align: right;
-	font-weight: 700;
+}
+
+#schedule ul.date-schedule li>div{
+	padding: 8px 16px;
+}
+
+#schedule ul.date-schedule li .event{
+	width: 66%;
+}
+
+#schedule ul.date-schedule li .title{
+	font-family: FFDINWebBold, Helvetica, Arial, sans-serif;
 }
 /**************/
 
@@ -214,6 +221,10 @@ html, body{
     }*/
     #content-page{
     	margin-left: 0;
+    }
+
+    #sidebar{
+    	display:none;
     }
 
 }

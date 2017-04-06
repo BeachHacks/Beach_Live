@@ -1,3 +1,13 @@
 beachLiveApp.controller('schedule_controller', function($scope, data, AngFirebase, $state){
-	$scope.test = "hello world";
+
+	$scope.schedule = AngFirebase.getSchedule();
+
+	
+	AngFirebase.onScheduleChange(function(){
+		$scope.schedule = AngFirebase.getSchedule();
+		// console.log($scope.content);
+		if(!$scope.$$phase) {
+			$scope.$apply();
+		}
+	});
 });
