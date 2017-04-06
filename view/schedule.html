@@ -1,7 +1,36 @@
-<div id="schedule" style="">
-	<div id="schedule-calendar">
-		<div class="schedule-calendar-hour" ng-repeat="time in schedule">
-			<div class="hour">{{time.day}} {{time.hour}}</div>
-		</div>
+<div id="schedule" class="row">
+	<!--
+	<div class="col-md-6">
+		<h2 class="date">Saturday 4/22</h2>
+		<ul class="date-schedule">
+			<li>
+				<div class="time"> 5:30pm</div>
+				<div class="event">
+					<div class="title">
+						Hacker Registration
+					</div>
+					<div class="description">
+						@USU
+					</div>
+				</div>
+			</li>
+		</ul>
+	</div>
+	-->
+	<div class="col-md-6" ng-repeat=" (day, list) in schedule">
+		<h2 class="date">{{day}}</h2>
+		<ul class="date-schedule">
+			<li ng-repeat="(time, event) in list">
+				<div class="time">{{time}}</div>
+				<div class="event">
+					<div class="title">
+						{{event.title}}
+					</div>
+					<div class="description">
+						{{event.description}}
+					</div>
+				</div>
+			</li>
+		</ul>
 	</div>
 </div>
