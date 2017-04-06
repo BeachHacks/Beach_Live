@@ -81,13 +81,11 @@ beachLiveApp.controller('admin_schedule_controller', function($scope, data, AngF
 		}
 	};
 
-  var jsonData = "text/json;charset=utf-8," + encodeURIComponent(JSON.stringify($scope.schedule));
+  var jsobObj = { name: 'Michelle', age: 1 };
+  var jsonData = "text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(jsobObj));
+
+
   $scope.jsonUrl = 'data:' + jsonData;
-
-
-
-
-
 
 
 	$scope.download = function(){

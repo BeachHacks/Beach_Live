@@ -22,7 +22,7 @@ firebase.initializeApp(config);
 
 var beachLiveApp = angular.module("beachLive", ["firebase", "ui.router"]);
 
-beachLiveApp.config(function($stateProvider, $urlRouterProvider){
+beachLiveApp.config(['$stateProvider', '$urlRouterProvider', '$compileProvider',function($stateProvider, $urlRouterProvider,  $compileProvider){
 
 	$urlRouterProvider.otherwise('/announcement');
 
@@ -79,6 +79,9 @@ beachLiveApp.config(function($stateProvider, $urlRouterProvider){
 			controller: "admin_schedule_controller"
 		})
 
+
+		$compileProvider.aHrefSanitizationWhitelist(/^\s*(https?|ftp|mailto|data|chrome-extension):/);
+    // Angular before v1.2 uses $compileProvider.urlSanitizationWhitelist(...)
 	// var helloState = {
  //    name: 'hello',
  //    url: '/',
@@ -86,4 +89,4 @@ beachLiveApp.config(function($stateProvider, $urlRouterProvider){
  //  }
 
  //  $stateProvider.state(helloState);
-});
+}]);
