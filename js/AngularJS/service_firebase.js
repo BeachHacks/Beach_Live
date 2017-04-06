@@ -11,6 +11,10 @@ beachLiveApp.service('AngFirebase', function() {
 
     var anno_callbacks = [];
 
+    var schedule_callbacks = [];
+
+    var schedule = {};
+
     var login = function(_userName, _password, _callback){
 
         firebase.auth().signInWithEmailAndPassword(_userName+"@beachlive.com", _password).catch(function(error) {
@@ -95,6 +99,27 @@ beachLiveApp.service('AngFirebase', function() {
         );
     }
 
+
+    var getAnnouncement = function(){
+        return anno_message;
+    }
+
+    var deleteAnnouncement = function(_key){
+        firebase.database().ref('/announcement/'+ _key).remove();
+    }
+
+    var updateSchedule = function(_schedule){
+        console.log("update")
+        var obj = {
+            schedule: _schedule
+        }
+        firebase.database().ref("/schedule").update(obj);
+    }
+
+    var getSchedule = function(){
+        return schedule;
+    }
+    
     // EventListenner for when announcement data changed
     // Will Trigger callback to whom ever registered
     firebase.database().ref('/announcement').on('value', function(snapshot){
@@ -116,14 +141,18 @@ beachLiveApp.service('AngFirebase', function() {
         }
     });
 
-    var getAnnouncement = function(){
-        return anno_message;
-    }
+    // EventListenner for when schedule changed
+    // Will Trigger callback to whom ever registered
+    firebase.database().ref('/schedule').on('value', function(snapshot){
+        var snapshotContent = snapshot.val();
+        schedule = JSON.parse(snapshotContent.schedule);
+        // Trigger callbacks
+        for(var i = 0; i < schedule_callbacks.length; i++){
+            schedule_callbacks[i]();
+        }
+    });
 
-    var deleteAnnouncement = function(_key){
-        firebase.database().ref('/announcement/'+ _key).remove();
-    }
-    
+
     var service = {
         login               : login,
         checkLogin          : checkLogin,
@@ -131,7 +160,10 @@ beachLiveApp.service('AngFirebase', function() {
         getAnnouncement     : getAnnouncement,
         deleteAnnouncement  : deleteAnnouncement,
         onAnnouncement      : function(_callback){ anno_callbacks.push(_callback);},
-        logout              : logout
+        onScheduleChange    : function(_callback){ schedule_callbacks.push(_callback)},
+        logout              : logout,
+        updateSchedule      : updateSchedule,
+        getSchedule         : getSchedule
     };
 
     return service;

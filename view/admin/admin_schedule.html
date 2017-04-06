@@ -1,3 +1,10 @@
+<div>
+	<div class="row">
+		<input type="file" id="file" name="file"/>
+		<button ng-click="upload()">Upload New Schedule</button>
+	</div>
+	<a href="{{jsonUrl}}" download="schedule.json">Download Current Schedule</a>
+</div>
 <div id="schedule" class="row">
 	<div class="col-md-6" ng-repeat=" (day, list) in schedule">
 		<h2 class="date">{{day}}</h2>
