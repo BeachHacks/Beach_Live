@@ -2,10 +2,7 @@ beachLiveApp.controller('admin_schedule_controller', function($scope, data, AngF
 
 	$scope.schedule = AngFirebase.getSchedule();
 
-	var jsonData = "";
-
-
-	$scope.jsonUrl = "";
+	$scope.jsonUrl = 'data:' + AngFirebase.getEncodedSchedule();
 
 
 	$scope.upload = function(){
@@ -23,8 +20,8 @@ beachLiveApp.controller('admin_schedule_controller', function($scope, data, AngF
 
 	AngFirebase.onScheduleChange(function(){
 		$scope.schedule = AngFirebase.getSchedule();
-		jsonData = "text/json;charset=utf-8," + encodeURIComponent(JSON.stringify($scope.schedule, undefined, 2));
-		$scope.jsonUrl = 'data:' + jsonData;
+		$scope.jsonUrl = 'data:' + AngFirebase.getEncodedSchedule();
+
 		// console.log($scope.content);
 		if(!$scope.$$phase) {
 			$scope.$apply();
