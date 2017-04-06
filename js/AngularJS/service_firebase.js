@@ -15,6 +15,8 @@ beachLiveApp.service('AngFirebase', function() {
 
     var schedule = {};
 
+    var encoded_schedule_json = "";
+
     var login = function(_userName, _password, _callback){
 
         firebase.auth().signInWithEmailAndPassword(_userName+"@beachlive.com", _password).catch(function(error) {
@@ -119,6 +121,10 @@ beachLiveApp.service('AngFirebase', function() {
     var getSchedule = function(){
         return schedule;
     }
+
+    var getEncodedSchedule = function(){
+        return encoded_schedule_json;
+    }
     
     // EventListenner for when announcement data changed
     // Will Trigger callback to whom ever registered
@@ -146,6 +152,7 @@ beachLiveApp.service('AngFirebase', function() {
     firebase.database().ref('/schedule').on('value', function(snapshot){
         var snapshotContent = snapshot.val();
         schedule = JSON.parse(snapshotContent.schedule);
+        encoded_schedule_json = "text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(schedule, undefined, 2));
         // Trigger callbacks
         for(var i = 0; i < schedule_callbacks.length; i++){
             schedule_callbacks[i]();
@@ -163,7 +170,8 @@ beachLiveApp.service('AngFirebase', function() {
         onScheduleChange    : function(_callback){ schedule_callbacks.push(_callback)},
         logout              : logout,
         updateSchedule      : updateSchedule,
-        getSchedule         : getSchedule
+        getSchedule         : getSchedule,
+        getEncodedSchedule  : getEncodedSchedule
     };
 
     return service;
