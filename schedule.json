@@ -16,20 +16,32 @@
       "description": "@ USU ",
       "title": "Web Development Tools Workshop"
     },
-      "8:30 pm" : {
-              "title": "Intro to Apache Lucene Workshop",
-              "description": "@ USU"
-            },
-      "9:45 pm" : {
-              "title": "Intro to iOS Development Workshop",
-              "description": "@ USU Ballroom"
-            },
-      "10:30 pm" :{
-              "title": "Intro to Cloud Hosting Workshop",
-              "description": "@ USU"
-            }
+    "8:30 pm": {
+      "title": "Intro to Apache Lucene Workshop",
+      "description": "@ USU"
+    },
+    "9:45 pm": {
+      "title": "Intro to iOS Development Workshop",
+      "description": "@ USU Ballroom"
+    },
+    "10:30 pm": {
+      "title": "Intro to Cloud Hosting Workshop",
+      "description": "@ USU"
+    }
   },
   "Sunday 04-23": {
+    "12:00 am": {
+      "description": "@ USU Ballroom",
+      "title": "Midnight Snack"
+    },
+    "8:00 am": {
+      "description": "@ USU Ballroom",
+      "title": "Breakfast"
+    },
+    "11:00 am": {
+      "description": "@ USU Ballroom",
+      "title": "Intro to Competitive Programming Talk"
+    },
     "01:00 pm": {
       "description": "@ USU Ballroom",
       "title": "Lunch"
@@ -38,14 +50,6 @@
       "description": "@ USU Ballroom",
       "title": "Submission Deadline"
     },
-    "11:00 am": {
-      "description": "@ USU Ballroom",
-      "title": "Intro to Competitive Programming Talk"
-    },
-    "12:00 am": {
-      "description": "@ USU Ballroom",
-      "title": "Midnight Snack"
-    },
     "4:00 pm": {
       "description": "@ USU Ballroom",
       "title": "Judging Expo"
@@ -53,10 +57,6 @@
     "5:00 pm": {
       "description": "@ USU Ballroom",
       "title": "Closing Ceremonies"
-    },
-    "8:00 am": {
-      "description": "@ USU Ballroom",
-      "title": "Breakfast"
     }
   }
 }
