@@ -95,6 +95,7 @@ html, body{
 #view-content{
 	margin-top: 100px;
 	width: 95%;
+	height: 85%;
 }
 
 #campus-map{
@@ -161,6 +162,7 @@ html, body{
 /** Schedule **/
 #schedule{
 	background: linear-gradient(330deg, #4C4491 0%, #FD5C63 100%);
+	height: 100%;
 }
 #schedule .date{
 	text-transform: uppercase;
