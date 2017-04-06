@@ -73,6 +73,12 @@ beachLiveApp.config(function($stateProvider, $urlRouterProvider){
 			controller: "admin_controller"
 		})
 
+		.state("admin.schedule", {
+			url: "schedule",
+			templateUrl: "view/admin/admin_schedule.html",
+			controller: "admin_schedule_controller"
+		})
+
 	// var helloState = {
  //    name: 'hello',
  //    url: '/',
