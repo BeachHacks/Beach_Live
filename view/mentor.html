@@ -4,9 +4,14 @@
 			Request Mentor
 		</div>
 	</div>
+
 	<div class="box">
-		<div class="box-message">
-			<form class="form-horizontal">
+		<div class="box-message row" style="width: 100% !important;">
+			<form class="form-horizontal col-md-10">
+				<div class="form-group">
+					<label for="">Name</label>
+					<textarea class="form-control"  ng-model="name"></textarea>
+				</div>
 				<div class="form-group">
 					<label for="tableNumber" class="col-md-1 control-label">Table</label>
 					<div class="col-md-2">
@@ -21,38 +26,18 @@
 					</label>
 					
 				</div>
-
-
-				<!--
-				<div class="form-group">
-					<label for="sponsor">Sponsor</label><br>
-					<label class="radio-inline">
-						<input type="radio" name="mentorSponsorOption" id="none" value="none" checked=""> None
-					</label>
-					<label class="radio-inline">
-						<input type="radio" name="mentorSponsorOption" id="cylance" value="Cylance"> Cylance
-					</label>
-					<label class="radio-inline">
-						<input type="radio" name="mentorSponsorOption" id="monstervr" value="MonsterVR"> MonsterVR
-					</label>
-					<label class="radio-inline">
-						<input type="radio" name="mentorSponsorOption" id="namecheap" value="Namecheap"> Namecheap
-					</label>
-					<label class="radio-inline">
-						<input type="radio" name="mentorSponsorOption" id="pariveda" value="Pariveda Solutions"> Pariveda Solutions
-					</label>
-					<label class="radio-inline">
-						<input type="radio" name="mentorSponsorOption" id="restoration" value="Restoration Media"> Restoration Media
-					</label>
-				</div>
-				-->
-
 				<div class="form-group">
 					<label for="">Description</label>
 					<textarea class="form-control" rows="3" ng-model="description"></textarea>
 				</div>
 				<button type="submit" class="btn btn-default" ng-click="submit()">Submit</button>
 			</form>
+			<div class="col-md-2">
+				 <ul class="list-group" style="overflow-y: auto; max-height: 400px; width: 100%;">
+				  <li class="list-group-item" ng-repeat="(key, request) in requestList">{{request.request.name}}</li>
+
+				</ul>
+			</div>
 		</div>
-	</div>
+	</div> <!-- Box -->
 </div>

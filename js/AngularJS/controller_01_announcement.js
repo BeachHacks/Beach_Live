@@ -9,6 +9,7 @@ beachLiveApp.controller('announcement_controller', function($scope, data, AngFir
 	// 	$scope.$apply();
 	// });
 
+	// Trigger rerender
 	AngFirebase.onAnnouncement(function(){
 		$scope.content = AngFirebase.getAnnouncement();
 		// console.log($scope.content);
