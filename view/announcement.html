@@ -1,8 +1,13 @@
-<div class="row" style="">
+<div class="row animated fadeIn" style="">
 	<div style="background:;  ">
 
+		<!-- Loading Spinner while we are waiting for requests -->
+		<div ng-if="!content || content.length <= 0">
+			<div class="loadingSpinner"></div>
+		</div>
+
 		<!-- Announcement Message Box -->
-		<div class="box row" ng-repeat="c in content">
+		<div class="box row animated fadeInUp" ng-repeat="c in content">
 			<div class="box-timestamp col-xs-2 col-sm-2 col-md-2 col-lg-2">
 				<div>{{c.timestamp.date}}</div>
 				<div>{{c.timestamp.time}}</div>
