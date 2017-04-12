@@ -17,7 +17,8 @@ beachLiveApp.controller('mentor_controller', function($scope, data, AngFirebase,
 			name	: $scope.name,
 			table 	: $scope.tableNum,
 			tech 	: $scope.selected_radio.option,
-			des 	: $scope.description
+			des 	: $scope.description,
+			status	: false
 		}
 
 		AngFirebase.writeRequestMentor(request);

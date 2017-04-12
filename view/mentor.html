@@ -34,7 +34,10 @@
 			</form>
 			<div class="col-md-2">
 				 <ul class="list-group" style="overflow-y: auto; max-height: 400px; width: 100%;">
-				  <li class="list-group-item" ng-repeat="(key, request) in requestList">{{request.request.name}}</li>
+				  <li class="list-group-item" ng-repeat="(key, request) in requestList">
+				  	{{request.request.name}}
+				  	 <span style="float: right; width: 15px; height: 15px; background: green;"></span>
+				  	 <span style="float: right; width: 15px; height: 15px; background: yellow;"></span></li>
 
 				</ul>
 			</div>

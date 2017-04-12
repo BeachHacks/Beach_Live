@@ -68,7 +68,7 @@ beachLiveApp.config(['$stateProvider', '$urlRouterProvider', '$compileProvider',
 		})
 
 		.state("admin.announcement", {
-			url: "/announcement",
+			url: "announcement",
 			templateUrl: "view/admin/admin_announcement.html",
 			controller: "admin_controller"
 		})
@@ -78,6 +78,12 @@ beachLiveApp.config(['$stateProvider', '$urlRouterProvider', '$compileProvider',
 			templateUrl: "view/admin/admin_schedule.html",
 			controller: "admin_schedule_controller"
 		})
+
+		.state("admin.mentor", {
+			url: "mentor",
+			templateUrl: "view/admin/admin_mentor.html",
+			controller: "admin_mentor_controller"
+		});
 
 
 		$compileProvider.aHrefSanitizationWhitelist(/^\s*(https?|ftp|mailto|data|chrome-extension):/);
