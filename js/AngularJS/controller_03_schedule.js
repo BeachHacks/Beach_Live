@@ -2,7 +2,7 @@ beachLiveApp.controller('schedule_controller', function($scope, data, AngFirebas
 
 	$scope.schedule = AngFirebase.getSchedule();
 
-	
+	// Trigger rerender
 	AngFirebase.onScheduleChange(function(){
 		$scope.schedule = AngFirebase.getSchedule();
 		// console.log($scope.content);
