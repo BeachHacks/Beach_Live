@@ -1,24 +1,31 @@
+
 <div>
-	<div class="row">
-		<input type="file" id="file" name="file"/>
-		<button ng-click="upload()">Upload New Schedule</button>
+	
+	<div class="box">
+		<div class="box-message">
+			<div class="row">
+				<input type="file" id="file" name="file"/>
+				<button ng-click="upload()">Upload New Schedule</button>
+				<a href="{{jsonUrl}}" download="schedule.json">Download Current Schedule</a>
+			</div>
+		</div>
 	</div>
-	<a href="{{jsonUrl}}" download="schedule.json">Download Current Schedule</a>
-<div id="schedule" class="row">
-	<div class="col-md-6" ng-repeat=" (day, list) in schedule">
-		<h2 class="date">{{day}}</h2>
-		<ul class="date-schedule">
-			<li ng-repeat="(time, event) in list">
-				<div class="time">{{time}}</div>
-				<div class="event">
-					<div class="title">
-						{{event.title}}
+	<div id="schedule" class="row">
+		<div class="col-md-6" ng-repeat=" (day, list) in schedule">
+			<h2 class="date">{{day}}</h2>
+			<ul class="date-schedule">
+				<li ng-repeat="(time, event) in list">
+					<div class="time">{{time}}</div>
+					<div class="event">
+						<div class="title">
+							{{event.title}}
+						</div>
+						<div class="description">
+							{{event.description}}
+						</div>
 					</div>
-					<div class="description">
-						{{event.description}}
-					</div>
-				</div>
-			</li>
-		</ul>
+				</li>
+			</ul>
+		</div>
 	</div>
 </div>

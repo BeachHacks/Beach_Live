@@ -8,7 +8,7 @@ beachLiveApp.service('AngFirebase', function() {
     var user = firebase.auth().currentUser;
 
     var anno_message        = [];
-    var schedule            = {};
+    var schedule            = null;
     var mentor_request_list = {};
 
     var anno_callbacks      = [];
