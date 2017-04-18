@@ -1,60 +1,52 @@
 {
   "Saturday 04-22": {
-    "3:00 pm": {
+    "2:00 pm": {
       "description": "Hacker Registrion @ USU",
       "title": "Doors Open"
     },
-    "3:30 pm": {
+    "3:00 pm - 3:30 pm": {
       "description": "@ USU Ballroom",
       "title": "Opening Ceremonies"
+    },
+    "3:30 pm": {
+      "description": "",
+      "title": "Hacking Begins"
+    },
+    "3:30 pm - 4:00 pm": {
+      "description": "@ TBA",
+      "title": "Team Formation"
     },
     "6:00 pm": {
       "description": "@ USU courtyard",
       "title": "Dinner"
     },
-    "7:00 pm": {
-      "description": "@ USU ",
-      "title": "Web Development Tools Workshop"
-    },
-    "8:30 pm": {
-      "title": "Intro to Apache Lucene Workshop",
-      "description": "@ USU"
-    },
-    "9:45 pm": {
-      "title": "Intro to iOS Development Workshop",
-      "description": "@ USU Ballroom"
-    },
-    "10:30 pm": {
-      "title": "Intro to Cloud Hosting Workshop",
-      "description": "@ USU"
+    "11:30 pm - 12:00pm": {
+      "description": "Mini Event @ TBA ",
+      "title": "Cub Stacking"
     }
   },
   "Sunday 04-23": {
     "12:00 am": {
-      "description": "@ USU Ballroom",
+      "description": "@ TBA",
       "title": "Midnight Snack"
     },
     "8:00 am": {
-      "description": "@ USU Ballroom",
+      "description": "@ TBA",
       "title": "Breakfast"
     },
-    "11:00 am": {
-      "description": "@ USU Ballroom",
-      "title": "Intro to Competitive Programming Talk"
-    },
-    "01:00 pm": {
-      "description": "@ USU Ballroom",
+    "1:00 pm": {
+      "description": "@ TBA",
       "title": "Lunch"
     },
-    "03:00 pm": {
-      "description": "@ USU Ballroom",
-      "title": "Submission Deadline"
+    "3:30 pm": {
+      "description": "Submission Deadline",
+      "title": "Hacking Ends"
     },
-    "4:00 pm": {
+    "3:30 pm - 5:00 pm": {
       "description": "@ USU Ballroom",
       "title": "Judging Expo"
     },
-    "5:00 pm": {
+    "5:00 pm - 5:30 pm": {
       "description": "@ USU Ballroom",
       "title": "Closing Ceremonies"
     }
