@@ -7,15 +7,18 @@ beachLiveApp.service('AngFirebase', function() {
 
     var user = firebase.auth().currentUser;
 
-    var anno_message = [];
+    var anno_message        = [];
+    var schedule            = {};
+    var mentor_request_list = {};
 
-    var anno_callbacks = [];
+    var anno_callbacks      = [];
+    var schedule_callbacks  = [];
+    var mentor_callbacks    = [];
 
-    var schedule_callbacks = [];
-
-    var schedule = {};
 
     var encoded_schedule_json = "";
+
+
 
     var login = function(_userName, _password, _callback){
 
@@ -125,6 +128,22 @@ beachLiveApp.service('AngFirebase', function() {
     var getEncodedSchedule = function(){
         return encoded_schedule_json;
     }
+
+    var getRequestList = function(){
+        return mentor_request_list;
+    }
+
+    var writeRequestMentor = function(_request){
+
+        var curTimestamp = Math.floor(Date.now());
+
+        var jsonObj = {
+            time: curTimestamp,
+            request : _request
+        }
+
+        firebase.database().ref("/mentor/request").push(jsonObj);
+    }
     
     // EventListenner for when announcement data changed
     // Will Trigger callback to whom ever registered
@@ -159,6 +178,15 @@ beachLiveApp.service('AngFirebase', function() {
         }
     });
 
+    firebase.database().ref('/mentor/request').on('value', function(snapshot){
+        mentor_request_list = snapshot.val();
+
+        // Trigger callbacks
+        for(var i = 0; i < mentor_callbacks.length; i++){
+            mentor_callbacks[i]();
+        }
+    });
+
 
     var service = {
         login               : login,
@@ -168,10 +196,13 @@ beachLiveApp.service('AngFirebase', function() {
         deleteAnnouncement  : deleteAnnouncement,
         onAnnouncement      : function(_callback){ anno_callbacks.push(_callback);},
         onScheduleChange    : function(_callback){ schedule_callbacks.push(_callback)},
+        onMentorChange      : function(_callback){ mentor_callbacks.push(_callback)},
         logout              : logout,
         updateSchedule      : updateSchedule,
         getSchedule         : getSchedule,
-        getEncodedSchedule  : getEncodedSchedule
+        getEncodedSchedule  : getEncodedSchedule,
+        writeRequestMentor  : writeRequestMentor,
+        getRequestList      : getRequestList
     };
 
     return service;
