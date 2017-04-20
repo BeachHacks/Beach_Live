@@ -32,8 +32,9 @@ beachLiveApp.controller('mentor_controller', function($scope, data, AngFirebase,
 				status	: false
 			}
 
-			var message = "*Name:* " + $scope.name + "\n*Table Number:* " + $scope.tableNum +
-				"\n*Tech* : " + $scope.selected_radio.option + "\n*Description:* " + $scope.description;
+			var message = ":star::star::star:" + "\n*Name:* " + $scope.name + "\n*Table Number:* " + $scope.tableNum +
+				"\n*Tech* : " + $scope.selected_radio.option + "\n*Description:* " + $scope.description
+				+ "\n:star::star::star:";
 
 			var payload = {
 				"text": message,

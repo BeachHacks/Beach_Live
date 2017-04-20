@@ -23,6 +23,7 @@
 					<div class="col-md-2">
 						<input type="number" class="form-control" id="tableNumber" min="1" max="68" placeholder="#" ng-model="tableNum">
 					</div>
+					<p>Note: If you are not a table please specify your location below.</p>
 				</div>
 
 				<div class="form-group">
@@ -30,7 +31,7 @@
 					<label class="radio-inline" ng-repeat="option in radio_option">
 						<input type="radio" name="mentorTechOption"   ng-value="option" ng-model="selected_radio.option"> {{option}}
 					</label>
-					
+
 				</div>
 				<div class="form-group">
 					<label for="">Description</label>
@@ -47,7 +48,6 @@
 				  	 <!-- <span style="float: right; width: 15px; height: 15px; background: green;"></span> -->
 				  	 <!-- <span style="float: right; height: 15px; background: yellow; padding: 3px;">Pending...</span></li> -->
 				  	 <div style="display: inline; float:right; background: yellow; padding: 3px;">Pending</div>
-
 				</ul>
 			</div>
 		</div>
