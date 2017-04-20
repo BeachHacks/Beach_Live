@@ -1,5 +1,8 @@
 beachLiveApp.controller('mentor_controller', ['$scope', '$http', function($scope, $http, data, AngFirebase, $state){
 
+
+	//fix page later when rich is done
+
 	$scope.requestList = AngFirebase.getRequestList();
 
 	$scope.name 					= null;
