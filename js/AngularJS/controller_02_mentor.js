@@ -32,10 +32,12 @@ beachLiveApp.controller('mentor_controller', function($scope, data, AngFirebase,
 				status	: false
 			}
 
+			//initializing message from attendee
 			var message = ":star::star::star:" + "\n*Name:* " + $scope.name + "\n*Table Number:* " + $scope.tableNum +
 				"\n*Tech* : " + $scope.selected_radio.option + "\n*Description:* " + $scope.description
 				+ "\n:star::star::star:";
 
+			//initializing payload
 			var payload = {
 				"text": message,
 				"mrkdwn": true
