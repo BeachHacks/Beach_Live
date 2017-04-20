@@ -43,7 +43,7 @@ beachLiveApp.controller('mentor_controller', function($scope, data, AngFirebase,
 			// POST Request to our mentor Slack channel
 			$http({
 			  method: 'POST',
-			  url: 'https://hooks.slack.com/services/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',
+			  url: 'https://hooks.slack.com/services/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',
 				headers: {
 	   			'Content-Type': 'application/x-www-form-urlencoded'
 	 			},
