@@ -5,12 +5,18 @@
 		</div>
 	</div>
 
-	<div class="box">
-		<div class="box-message row" style="width: 100% !important;">
-			<form class="form-horizontal col-md-9">
+	<div ng-if="loading">
+		<div class="loadingSpinner"></div>
+	</div>
+
+	<div class="box animated fadeIn" ng-show="!loading">
+		<div class="box-message row" style="width: 100% !important; word-wrap: normal;">
+			<form class="form-horizontal col-md-9" >
 				<div class="form-group">
-					<label for="">Name</label>
-					<textarea class="form-control"  ng-model="name"></textarea>
+					<label class="col-md-1 control-label">Name</label>
+					<div class="col-md-8">
+						<textarea class="form-control"  ng-model="name"></textarea>
+					</div>
 				</div>
 				<div class="form-group">
 					<label for="tableNumber" class="col-md-1 control-label">Table</label>
@@ -31,7 +37,9 @@
 					<textarea class="form-control" rows="3" ng-model="description"></textarea>
 				</div>
 				<button type="submit" class="btn btn-default" ng-click="submit()">Submit</button>
+				<span ng-show="incomplete" style="color: red;">Incomplete inputs</span>
 			</form>
+
 			<div class="col-md-3" style="margin-top: 20px;">
 				 <ul class="list-group " style="overflow-y: auto; max-height: 400px; width: 100%;">
 				  <li class="list-group-item animated fadeInUp" ng-repeat="(key, request) in requestList" ng-show="!request.request.status">

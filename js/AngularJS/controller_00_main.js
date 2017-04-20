@@ -2,4 +2,5 @@ beachLiveApp.controller('main_controller', function($scope, data, AngFirebase, $
 	$scope.tab = data.tab;
 	$scope.data = data;
 
+	
 });

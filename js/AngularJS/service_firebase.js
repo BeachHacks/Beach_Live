@@ -1,20 +1,17 @@
 var month = ['JAN', 'FEB', 'MAR', 'APR', 'MAY', 'JUN','JUL', 'AUG', 'SEPT', 'OCT', 'NOV', 'DEC'];
 
-beachLiveApp.service('AngFirebase', function() {
+beachLiveApp.service('AngFirebase', function($window) {
 
 
-    var database = firebase.database();
-
-    var user = firebase.auth().currentUser;
-
+    var user                = firebase.auth().currentUser;
     var anno_message        = [];
     var schedule            = null;
+    var time                = null;
     var mentor_request_list = {};
 
     var anno_callbacks      = [];
     var schedule_callbacks  = [];
     var mentor_callbacks    = [];
-
 
     var encoded_schedule_json = "";
 
@@ -27,58 +24,17 @@ beachLiveApp.service('AngFirebase', function() {
           var errorCode = error.code;
           var errorMessage = error.message;
           logout();
-          // console.log(errorMessage);
         }).then(function(){
-            // firebase.auth().onAuthStateChanged(function(user){
-            // _callback(user);
-            // });
             user = firebase.auth().currentUser;
             _callback(user);
         });
-
-        // user = firebase.auth().currentUser;
-        // if(user){
-        //     return true;
-        // } else {
-        //     return false;
-        // }
-
-        // firebase.auth().onAuthStateChanged(function(user){
-        //     _callback(user);
-        // });
-
-
-        /** Fake Login **/
-                // if($scope.admin.user == admin_auth.user && $scope.admin.password == admin_auth.password){
-        //  console.log("Logged In");
-        //  $scope.adminAccess = true;
-        //  $scope.failed = false;
-        //  $('#loginModal').modal('toggle') 
-        // } else {
-        //  $scope.failed = true;
-        //  console.log("Failed Login");
-        // }
-        // if(_userName == "admin" && _password == "1234"){
-        //     user = 1;
-        //     return true;
-        // } else {
-        //     return false;
-        // }
     }
 
     var writeAnnouncement = function(_message){
         var curTimestamp = Math.floor(Date.now());
 
-        // var newPostKey = firebase.database().ref().child('posts').push().key;
-
         var update = {};
 
-        // update[newPostKey] = {
-        //     "timeStamp"     : curTimeStamp,
-        //         "message"       : _message
-        // }
-
-        // firebase.database().ref("/announcement").update(update);
         firebase.database().ref("/announcement").push({
             "timestamp"     : curTimestamp,
                 "message"       : _message
@@ -142,16 +98,21 @@ beachLiveApp.service('AngFirebase', function() {
             request : _request
         }
 
-        firebase.database().ref("/mentor/request").push(jsonObj);
+        return firebase.database().ref("/mentor/request").push(jsonObj);
     }
 
-    var acceptRequest = function(_key){
+    var acceptRequest = function(_key, _mentor){
         // console.log(mentor_request_list[_key]);
         firebase.database().ref("/mentor/request/"+ _key + "/request").update({"status": true});
+        firebase.database().ref("/mentor/request/"+ _key + "/request").update({"mentor": _mentor});
     }
 
     var deleteRequest = function(_key){
         firebase.database().ref("/mentor/request/"+_key).remove();
+    }
+
+    var forceRefresh = function(){
+        firebase.database().ref("/refresh").update({"timestamp" : Math.floor(Date.now())});
     }
     
     // EventListenner for when announcement data changed
@@ -196,6 +157,16 @@ beachLiveApp.service('AngFirebase', function() {
         }
     });
 
+    // Listener for forcing refresh
+    firebase.database().ref('/refresh').on('value', function(snapshot){
+
+        if(time == null){
+            time = snapshot.val();
+        } else {
+           $window.location.reload(); 
+        }
+        
+    });
 
     var service = {
         login               : login,
@@ -213,7 +184,8 @@ beachLiveApp.service('AngFirebase', function() {
         writeRequestMentor  : writeRequestMentor,
         getRequestList      : getRequestList,
         acceptRequest       : acceptRequest,
-        deleteRequest       : deleteRequest
+        deleteRequest       : deleteRequest,
+        forceRefresh        : forceRefresh
     };
 
     return service;

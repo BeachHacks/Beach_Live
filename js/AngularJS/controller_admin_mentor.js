@@ -9,8 +9,8 @@ beachLiveApp.controller('admin_mentor_controller', function($scope, data, AngFir
 		return convertTime(_timestamp);
 	}
 
-	$scope.accept = function(_key){
-		AngFirebase.acceptRequest(_key);
+	$scope.accept = function(_key, _mentor){
+		AngFirebase.acceptRequest(_key, _mentor);
 	}
 
 	$scope.cancel = function(_key){

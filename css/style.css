@@ -140,6 +140,7 @@ html, body{
 	color: #040404;
 	width: 65% !important;
 	min-width: 200px;
+	word-wrap: break-word;
 }
 
 .box-button{
@@ -251,7 +252,7 @@ html, body{
 	margin-bottom: 5px;
 }
 
-.request-dropdown:hover{
+.request-dropdown .request_name:hover{
 	background-color: #777;
 	cursor: pointer;
 }
@@ -263,6 +264,11 @@ html, body{
 
 .request-dropdown ul{
 	text-align: left;
+}
+
+.mentorName{
+	width: 60%;
+	display: inline;
 }
 
 /**
