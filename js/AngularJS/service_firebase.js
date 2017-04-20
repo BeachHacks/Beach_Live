@@ -144,6 +144,15 @@ beachLiveApp.service('AngFirebase', function() {
 
         firebase.database().ref("/mentor/request").push(jsonObj);
     }
+
+    var acceptRequest = function(_key){
+        // console.log(mentor_request_list[_key]);
+        firebase.database().ref("/mentor/request/"+ _key + "/request").update({"status": true});
+    }
+
+    var deleteRequest = function(_key){
+        firebase.database().ref("/mentor/request/"+_key).remove();
+    }
     
     // EventListenner for when announcement data changed
     // Will Trigger callback to whom ever registered
@@ -202,7 +211,9 @@ beachLiveApp.service('AngFirebase', function() {
         getSchedule         : getSchedule,
         getEncodedSchedule  : getEncodedSchedule,
         writeRequestMentor  : writeRequestMentor,
-        getRequestList      : getRequestList
+        getRequestList      : getRequestList,
+        acceptRequest       : acceptRequest,
+        deleteRequest       : deleteRequest
     };
 
     return service;
