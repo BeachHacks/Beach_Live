@@ -10,12 +10,14 @@ beachLiveApp.controller('admin_controller', function($scope, data, AngFirebase, 
 
 	// kick peple if they are not logged in
 	// Note: User does not keep their session when refresh
+
+	/*
 	if(!AngFirebase.checkLogin()){
 		// console.log("loged out");
 		AngFirebase.logout(); // Just to make sure
 		$state.go("public.announcement");
 	}
-
+	*/
 
 	$scope.delete = function(_key){
 		console.log(_key);

@@ -32,9 +32,12 @@
 				</div>
 				<button type="submit" class="btn btn-default" ng-click="submit()">Submit</button>
 			</form>
-			<div class="col-md-2">
-				 <ul class="list-group" style="overflow-y: auto; max-height: 400px; width: 100%;">
-				  <li class="list-group-item" ng-repeat="(key, request) in requestList">{{request.request.name}}</li>
+			<div class="col-md-2" style="margin-top: 20px;">
+				 <ul class="list-group " style="overflow-y: auto; max-height: 400px; width: 100%;">
+				  <li class="list-group-item animated fadeInUp" ng-repeat="(key, request) in requestList">
+				  	{{request.request.name}}
+				  	 <span style="float: right; width: 15px; height: 15px; background: green;"></span>
+				  	 <span style="float: right; width: 15px; height: 15px; background: yellow;"></span></li>
 
 				</ul>
 			</div>

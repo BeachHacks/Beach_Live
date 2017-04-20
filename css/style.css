@@ -150,7 +150,7 @@ html, body{
 
 .announcement-content div{
 	padding: 10px;
-	background: #F2F2F2F2;
+	background: #F2F2F2;
 	color: #040404;
 }
 
@@ -241,6 +241,29 @@ html, body{
 
 }
 
+/* Mentor Admin */
+#pending{
+}
+
+.request-dropdown{
+	text-align: center;
+	background-color: #F2F2F2;
+	margin-bottom: 5px;
+}
+
+.request-dropdown:hover{
+	background-color: #777;
+	cursor: pointer;
+}
+
+.request-dropdown .content{
+	background-color: #eee;
+	padding: 5px;
+}
+
+.request-dropdown ul{
+	text-align: left;
+}
 
 /**
 ***********************

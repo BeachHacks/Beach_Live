@@ -1,4 +1,9 @@
-<div id="schedule" class="row animated fadeIn">
+<div id="schedule" class="row">
+
+	<!-- Loading Spinner while we are waiting for requests -->
+	<div ng-if="!schedule">
+		<div class="loadingSpinner"></div>
+	</div>
 	<div class="col-md-6" ng-repeat="(day, list) in schedule">
 		<h2 class="date">{{day}}</h2>
 		<ul class="date-schedule">
