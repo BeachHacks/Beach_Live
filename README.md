@@ -5,3 +5,5 @@ UI-Router: There is a cross-origin security problem if run on Chrome broswer loc
 Use firefox browser for development
 
 #Deploy: https://beachlive-e9dbc.firebaseapp.com
+
+[![Build Status](https://travis-ci.org/BeachHacks/Beach_Live.svg?branch=master)](https://travis-ci.org/BeachHacks/Beach_Live)
