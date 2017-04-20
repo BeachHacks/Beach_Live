@@ -98,7 +98,7 @@ beachLiveApp.service('AngFirebase', function($window) {
             request : _request
         }
 
-        firebase.database().ref("/mentor/request").push(jsonObj);
+        return firebase.database().ref("/mentor/request").push(jsonObj);
     }
 
     var acceptRequest = function(_key){
