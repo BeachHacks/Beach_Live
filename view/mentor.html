@@ -7,7 +7,7 @@
 
 	<div class="box">
 		<div class="box-message row" style="width: 100% !important;">
-			<form class="form-horizontal col-md-10">
+			<form class="form-horizontal col-md-9">
 				<div class="form-group">
 					<label for="">Name</label>
 					<textarea class="form-control"  ng-model="name"></textarea>
@@ -32,12 +32,13 @@
 				</div>
 				<button type="submit" class="btn btn-default" ng-click="submit()">Submit</button>
 			</form>
-			<div class="col-md-2" style="margin-top: 20px;">
+			<div class="col-md-3" style="margin-top: 20px;">
 				 <ul class="list-group " style="overflow-y: auto; max-height: 400px; width: 100%;">
-				  <li class="list-group-item animated fadeInUp" ng-repeat="(key, request) in requestList">
+				  <li class="list-group-item animated fadeInUp" ng-repeat="(key, request) in requestList" ng-show="!request.request.status">
 				  	{{request.request.name}}
-				  	 <span style="float: right; width: 15px; height: 15px; background: green;"></span>
-				  	 <span style="float: right; width: 15px; height: 15px; background: yellow;"></span></li>
+				  	 <!-- <span style="float: right; width: 15px; height: 15px; background: green;"></span> -->
+				  	 <!-- <span style="float: right; height: 15px; background: yellow; padding: 3px;">Pending...</span></li> -->
+				  	 <div style="display: inline; float:right; background: yellow; padding: 3px;">Pending</div>
 
 				</ul>
 			</div>
