@@ -140,6 +140,7 @@ html, body{
 	color: #040404;
 	width: 65% !important;
 	min-width: 200px;
+	word-wrap: break-word;
 }
 
 .box-button{
