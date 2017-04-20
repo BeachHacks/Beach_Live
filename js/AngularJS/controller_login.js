@@ -43,9 +43,9 @@ beachLiveApp.controller('login_controller', function($scope, AngFirebase, $state
 	$rootScope.keyup = function(_event){
 
 		// ctrl + alt + b = Login
-		console.log(_event.keyCode)
+		// console.log(_event.keyCode)
 		if(_event.altKey && _event.ctrlKey){
-			console.log('keyup');
+			// console.log('keyup');
 			$('#loginModal').modal('show'); 
 		}
 	}
