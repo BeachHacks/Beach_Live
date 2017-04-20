@@ -19,7 +19,7 @@ beachLiveApp.controller('mentor_controller', function($scope, data, AngFirebase,
 	$scope.submit = function(){
 
 		/* Check for Complete Form */
-		
+
 		if ( ($scope.name == null || $scope.name.length < 1) || ($scope.tableNum == null || $scope.tableNum < 0) ||
 		 ($scope.selected_radio.option == 'default') || ($scope.description == null || $scope.description.length < 1) ){
 			$scope.incomplete = true;
@@ -32,10 +32,12 @@ beachLiveApp.controller('mentor_controller', function($scope, data, AngFirebase,
 				status	: false
 			}
 
-
+			var message = "*Name:* " + $scope.name + "\n*Table Number:* " + $scope.tableNum +
+				"\n*Tech* : " + $scope.selected_radio.option + "\n*Description:* " + $scope.description;
 
 			var payload = {
-				"text": "Name: " + $scope.name + "\n" + $scope.tableNum + "\n" + $scope.selected_radio.option + "\n" + $scope.description
+				"text": message,
+				"mrkdwn": true
 			}
 			// POST Request to our mentor Slack channel
 			$http({
