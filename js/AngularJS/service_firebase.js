@@ -101,9 +101,10 @@ beachLiveApp.service('AngFirebase', function($window) {
         return firebase.database().ref("/mentor/request").push(jsonObj);
     }
 
-    var acceptRequest = function(_key){
+    var acceptRequest = function(_key, _mentor){
         // console.log(mentor_request_list[_key]);
         firebase.database().ref("/mentor/request/"+ _key + "/request").update({"status": true});
+        firebase.database().ref("/mentor/request/"+ _key + "/request").update({"mentor": _mentor});
     }
 
     var deleteRequest = function(_key){

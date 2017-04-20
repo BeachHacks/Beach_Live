@@ -252,7 +252,7 @@ html, body{
 	margin-bottom: 5px;
 }
 
-.request-dropdown:hover{
+.request-dropdown .request_name:hover{
 	background-color: #777;
 	cursor: pointer;
 }
@@ -264,6 +264,11 @@ html, body{
 
 .request-dropdown ul{
 	text-align: left;
+}
+
+.mentorName{
+	width: 60%;
+	display: inline;
 }
 
 /**
