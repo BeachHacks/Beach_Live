@@ -87,12 +87,5 @@ beachLiveApp.config(['$stateProvider', '$urlRouterProvider', '$compileProvider',
 
 
 		$compileProvider.aHrefSanitizationWhitelist(/^\s*(https?|ftp|mailto|data|chrome-extension):/);
-    // Angular before v1.2 uses $compileProvider.urlSanitizationWhitelist(...)
-	// var helloState = {
- //    name: 'hello',
- //    url: '/',
- //    template: '<h3>hello world!</h3>'
- //  }
-
- //  $stateProvider.state(helloState);
 }]);
+

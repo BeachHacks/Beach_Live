@@ -1,4 +1,4 @@
-beachLiveApp.controller('login_controller', function($scope, AngFirebase, $state){
+beachLiveApp.controller('login_controller', function($scope, AngFirebase, $state, $rootScope){
 
 	/** Admin Login **/
 	$scope.checkLogin = AngFirebase.checkLogin;
@@ -39,4 +39,14 @@ beachLiveApp.controller('login_controller', function($scope, AngFirebase, $state
 		AngFirebase.logout();
 		$state.go("public.announcement");
 	};
+
+	$rootScope.keyup = function(_event){
+
+		// ctrl + alt + b = Login
+		console.log(_event.keyCode)
+		if(_event.altKey && _event.ctrlKey){
+			console.log('keyup');
+			$('#loginModal').modal('show'); 
+		}
+	}
 });
