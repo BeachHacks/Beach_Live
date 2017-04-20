@@ -27,6 +27,13 @@ beachLiveApp.controller('admin_controller', function($scope, data, AngFirebase, 
 		$scope.message = "";
 	}
 
+	/*
+	*	Force all active client to refresh their page
+	*/
+	$scope.forceRefresh = function(){
+		AngFirebase.forceRefresh();
+	}
+
 
 
 	// AngFirebase.onAnnouncement(function(_announcement){
