@@ -22,7 +22,7 @@ beachLiveApp.controller('song_controller', function($scope, $http){
         // this callback will be called asynchronously
         // when the response is available
         console.log("sent to slack");
-        alert("Thank you. Your song request has been sent to our DJ.")
+        alert("Thank you. Your song request has been sent to our DJ. :)")
         $scope.title = "";
         $scope.artist = "";
       }, function errorCallback(response) {
