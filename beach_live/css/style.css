@@ -170,6 +170,10 @@ html, body{
 	padding-right: 10px;
 }
 
+.textarea-no-resize {
+	resize: none;
+}
+
 /****************/
 
 /** Side Bar **/
