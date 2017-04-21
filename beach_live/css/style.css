@@ -112,6 +112,10 @@ html, body{
 	/*background-image:url('https://sbloom2.files.wordpress.com/2016/03/b0936-testimages.jpeg?w=400&h=265');*/
 }
 
+.campus-img {
+	width: 100%;
+}
+
 /** Announcement Page **/
 .box{
 
