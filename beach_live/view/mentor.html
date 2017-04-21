@@ -14,14 +14,14 @@
 			<form class="form-horizontal col-md-9" >
 				<div class="form-group">
 					<label class="col-md-1 control-label">Name</label>
-					<div class="col-md-8">
-						<textarea class="form-control"  ng-model="name"></textarea>
+					<div class="col-md-12">
+						<input class="form-control"  ng-model="name"></input>
 					</div>
 				</div>
 				<div class="form-group">
 					<label for="tableNumber" class="col-md-1 control-label">Table</label>
-					<div class="col-md-2">
-						<input type="number" class="form-control" id="tableNumber" min="1" max="68" placeholder="#" ng-model="tableNum">
+					<div class="col-md-12">
+						<input type="number" class="form-control" id="tableNumber" min="1" max="150" placeholder="#" ng-model="tableNum">
 					</div>
 				</div>
 
@@ -30,7 +30,7 @@
 					<label class="radio-inline" ng-repeat="option in radio_option">
 						<input type="radio" name="mentorTechOption"   ng-value="option" ng-model="selected_radio.option"> {{option}}
 					</label>
-					
+
 				</div>
 				<div class="form-group">
 					<label for="">Description</label>
