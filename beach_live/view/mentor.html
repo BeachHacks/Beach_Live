@@ -46,14 +46,13 @@
 				<span ng-show="incomplete" style="color: red;">Incomplete inputs</span>
 			</form>
 
-			<div class="col-md-3" style="margin-top: 20px;">
-				 <ul class="list-group " style="overflow-y: auto; max-height: 400px; width: 100%;">
+			<div style="margin-top: 20px;">
+				 <ul class="mentor-status" style="overflow-y: auto; max-height: 400px; width: 100%;">
 				  <li class="list-group-item animated fadeInUp" ng-repeat="(key, request) in requestList" ng-show="!request.request.status">
 				  	{{request.request.name}}
 				  	 <!-- <span style="float: right; width: 15px; height: 15px; background: green;"></span> -->
 				  	 <!-- <span style="float: right; height: 15px; background: yellow; padding: 3px;">Pending...</span></li> -->
 				  	 <div style="display: inline; float:right; background: yellow; padding: 3px;">Pending</div>
-
 				</ul>
 			</div>
 		</div>
