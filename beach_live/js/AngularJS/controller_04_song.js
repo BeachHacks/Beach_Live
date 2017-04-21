@@ -1,4 +1,4 @@
-beachLiveApp.controller('song_controller', function($scope, $http){
+beachLiveApp.controller('song_controller', function($scope, $state, $http){
 
   $scope.submitSong = function(){
     //initializing message from attendee
