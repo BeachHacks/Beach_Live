@@ -10,7 +10,7 @@ beachLiveApp.service('data', ['AngFirebase', function(AngFirebase) {
     		MAP				: "map",
     		MENTOR			: "mentor",
     		HARDWARE		: "test",
-    		SONG			: "test"
+    		SONG			: "song"
     	}
     	// announcement_content : getAnnouncement
     };

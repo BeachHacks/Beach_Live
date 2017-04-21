@@ -33,7 +33,7 @@ beachLiveApp.config(['$stateProvider', '$urlRouterProvider', '$compileProvider',
 		.state("public", {
 			url:"/",
 			templateUrl: "view/main.html",
-			controller: "main_controller"		
+			controller: "main_controller"
 		})
 
 		.state("public.announcement", {
@@ -59,6 +59,12 @@ beachLiveApp.config(['$stateProvider', '$urlRouterProvider', '$compileProvider',
 			url: "mentor",
 			templateUrl: "view/mentor.html",
 			controller: "mentor_controller"
+		})
+
+		.state("public.song", {
+			url: "song",
+			templateUrl: "view/song.html",
+			controller: "song_controller"
 		})
 
 		.state("admin", {
@@ -88,4 +94,3 @@ beachLiveApp.config(['$stateProvider', '$urlRouterProvider', '$compileProvider',
 
 		$compileProvider.aHrefSanitizationWhitelist(/^\s*(https?|ftp|mailto|data|chrome-extension):/);
 }]);
-
