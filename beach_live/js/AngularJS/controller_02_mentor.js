@@ -19,7 +19,7 @@ beachLiveApp.controller('mentor_controller', function($scope, data, AngFirebase,
 	$scope.submit = function(){
 
 		/* Check for Complete Form */
-		
+
 		if ( ($scope.name == null || $scope.name.length < 1) || ($scope.tableNum == null || $scope.tableNum < 0) ||
 		 ($scope.selected_radio.option == 'default') || ($scope.description == null || $scope.description.length < 1) ){
 			$scope.incomplete = true;
@@ -32,15 +32,20 @@ beachLiveApp.controller('mentor_controller', function($scope, data, AngFirebase,
 				status	: false
 			}
 
+			//initializing message from attendee
+			var message = ":star::star::star:" + "\n*Name:* " + $scope.name + "\n*Table Number:* " + $scope.tableNum +
+				"\n*Tech* : " + $scope.selected_radio.option + "\n*Description:* " + $scope.description
+				+ "\n:star::star::star:";
 
-
+			//initializing payload
 			var payload = {
-				"text": "Name: " + $scope.name + "\n" + $scope.tableNum + "\n" + $scope.selected_radio.option + "\n" + $scope.description
+				"text": message,
+				"mrkdwn": true
 			}
 			// POST Request to our mentor Slack channel
 			$http({
 			  method: 'POST',
-			  url: 'https://hooks.slack.com/services/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',
+			  url: 'https://hooks.slack.com/services/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',
 				headers: {
 	   			'Content-Type': 'application/x-www-form-urlencoded'
 	 			},
