@@ -1,0 +1,34 @@
+<div id="song">
+	<div class="box">
+		<div class="box-message">
+			Song Request
+		</div>
+	</div>
+
+	<div ng-if="loading">
+		<div class="loadingSpinner"></div>
+	</div>
+
+	<div class="box animated fadeIn" ng-show="!loading">
+		<div class="box-message row" style="width: 100% !important; word-wrap: normal;">
+			<form class="form-horizontal col-md-9" >
+				<div class="form-group">
+					<label class="col-md-1 control-label">Song's Title</label>
+					<div class="col-md-12">
+						<input class="form-control"  ng-model="title"></input>
+					</div>
+				</div>
+        <div class="form-group">
+					<label class="col-md-1 control-label">Song's Artist(s)</label>
+					<div class="col-md-12">
+						<input class="form-control"  ng-model="artist"></input>
+					</div>
+				</div>
+				<div class="col-md-12" style="padding-bottom: 25px;">
+					<button type="submit" class="btn btn-default" ng-click="submitSong()">Submit</button>
+				</div>
+				<span ng-show="incomplete" style="color: red;">Incomplete inputs</span>
+			</form>
+		</div>
+	</div> <!-- Box -->
+</div>
