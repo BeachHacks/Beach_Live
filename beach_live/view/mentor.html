@@ -35,8 +35,10 @@
 
 				</div>
 				<div class="form-group">
-					<label for="">Description</label>
-					<textarea class="form-control" rows="3" ng-model="description"></textarea>
+					<label for="" class="col-md-1 control-label">Description</label>
+					<div class="col-md-12">
+						<textarea class="form-control" rows="3" ng-model="description"></textarea>
+					</div>
 				</div>
 				<button type="submit" class="btn btn-default" ng-click="submit()">Submit</button>
 				<span ng-show="incomplete" style="color: red;">Incomplete inputs</span>
