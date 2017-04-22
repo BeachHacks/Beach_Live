@@ -4,7 +4,6 @@ beachLiveApp.controller('main_controller', function($scope, data, AngFirebase, $
 
 	$scope.getUrl = function(_page, _url){
 
-		console.log(_url);
 		if(_page == 'HARDWARE'){
 			return _url;
 		}
