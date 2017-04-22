@@ -8,11 +8,11 @@ beachLiveApp.service('data', ['AngFirebase', function(AngFirebase) {
             SCHEDULE        : "schedule",
     		MAP				: "map",
     		MENTOR			: "mentor",
-    		HARDWARE		: "https://hardware.mlh.io/",
+    		HARDWARE		: "https://hardware.mlh.io/events/beach-hacks",
     		SONG			: "song"
     	},
         media : {
-            map_campus  : "https://i.imgur.com/hgsFmwP.png", // Campus img
+            map_campus  : "https://i.imgur.com/prN5SMC.png", // Campus img
             map_venue   : "https://i.imgur.com/m949vC0.png",  // venue img
             pyramid     : "https://i.imgur.com/yHASg5C.png"
         }
