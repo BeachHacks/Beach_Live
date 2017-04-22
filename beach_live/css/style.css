@@ -26,7 +26,7 @@ html, body{
 	background: yellow;
 	/*background-image: url("../asset/img/csulbTower.jpg");*/
 	/*background-color: #F8CD53;*/
-	background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.4)), url("https://i.imgur.com/5q1EjuQ.jpg");
+	background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.4)), url(https://i.imgur.com/5q1EjuQ.jpg);
 	background-repeat: no-repeat;
 	background-size: cover;
 	/*background-attachment:fixed;*/
@@ -168,6 +168,14 @@ html, body{
 .form-horizontal .form-group{
 	margin-right: -15px;
 	margin-left: -15px;
+}
+
+.inline-radio-option {
+	padding-right: 10px;
+}
+
+.textarea-no-resize {
+	resize: none;
 }
 
 /****************/

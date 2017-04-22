@@ -14,40 +14,45 @@
 			<form class="form-horizontal col-md-9" >
 				<div class="form-group">
 					<label class="col-md-1 control-label">Name</label>
-					<div class="col-md-8">
-						<textarea class="form-control"  ng-model="name"></textarea>
+					<div class="col-md-12">
+						<input class="form-control"  ng-model="name"></input>
 					</div>
 				</div>
 				<div class="form-group">
 					<label for="tableNumber" class="col-md-1 control-label">Table</label>
-					<div class="col-md-2">
-						<input type="number" class="form-control" id="tableNumber" min="1" max="68" placeholder="#" ng-model="tableNum">
+					<div class="col-md-12">
+						<input type="number" class="form-control" id="tableNumber" min="1" max="150" placeholder="#" ng-model="tableNum">
 					</div>
 				</div>
 					<p>Note: If you are not a table please specify your location in the description of your mentor request.</p>
 
 				<div class="form-group">
-					<label for="tech">Technology</label><br>
-					<label class="radio-inline" ng-repeat="option in radio_option">
-						<input type="radio" name="mentorTechOption"   ng-value="option" ng-model="selected_radio.option"> {{option}}
-					</label>
+					<label for="tech" class="col-md-1 control-label">Technology</label><br>
+					<div class="col-md-12">
+						<label class="inline-radio-option" ng-repeat="option in radio_option">
+							<input type="radio" name="mentorTechOption"   ng-value="option" ng-model="selected_radio.option"> {{option}}
+						</label>
+					</div>
 				</div>
 				<div class="form-group">
-					<label for="">Description</label>
-					<textarea class="form-control" rows="3" ng-model="description"></textarea>
+					<label for="" class="col-md-1 control-label">Description</label>
+					<div class="col-md-12">
+						<textarea class="form-control textarea-no-resize" rows="3" ng-model="description"></textarea>
+					</div>
 				</div>
-				<button type="submit" class="btn btn-default" ng-click="submit()">Submit</button>
+				<div class="col-md-12" style="padding-bottom: 25px;">
+					<button type="submit" class="btn btn-default" ng-click="submit()">Submit</button>
+				</div>
 				<span ng-show="incomplete" style="color: red;">Incomplete inputs</span>
 			</form>
 
-			<div class="col-md-3" style="margin-top: 20px;">
-				 <ul class="list-group " style="overflow-y: auto; max-height: 400px; width: 100%;">
+			<div style="margin-top: 20px;">
+				 <ul style="overflow-y: auto; max-height: 400px; width: 100%;">
 				  <li class="list-group-item animated fadeInUp" ng-repeat="(key, request) in requestList" ng-show="!request.request.status">
 				  	{{request.request.name}}
 				  	 <!-- <span style="float: right; width: 15px; height: 15px; background: green;"></span> -->
 				  	 <!-- <span style="float: right; height: 15px; background: yellow; padding: 3px;">Pending...</span></li> -->
 				  	 <div style="display: inline; float:right; background: yellow; padding: 3px;">Pending</div>
-
 				</ul>
 			</div>
 		</div>
