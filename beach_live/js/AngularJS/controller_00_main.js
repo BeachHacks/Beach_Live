@@ -1,8 +1,9 @@
 beachLiveApp.controller('main_controller', function($scope, data, AngFirebase, $state){
-	$scope.tab = data.tab;
-	$scope.data = data;
+	$scope.tab 		= data.tab;
+	$scope.data 	= data;
 
-	$scope.curMap = "campus";
+	$scope.media 	= data.media;
+	$scope.curMap 	= "campus";
 
 	/* Controlling nav bar links and routing **/
 	$scope.getUrl = function(_page, _url){
