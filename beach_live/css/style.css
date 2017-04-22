@@ -284,6 +284,54 @@ html, body{
 	display: inline;
 }
 
+
+/** MAP **/
+#map_nav ul{
+	/*list-style-type: none;
+    margin: 0;
+    padding: 0;
+    width: 400px;
+    background-color: #f1f1f1;*/
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #f1f1f1;
+}
+
+#map_nav li{
+	float:left;
+    width: 50%;
+}
+
+
+#map_nav{
+	margin-bottom: 20px;
+}
+#map_nav li a{
+	/*display: block;
+    padding: 8px 16px;
+    text-decoration: none;*/
+    display: block;
+    /*color: white;*/
+    color: #000;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+/* Change the link color on hover */
+#map_nav li a:hover {
+    background-color: #555;
+    color: white;
+    cursor: pointer;
+}
+
+#map_nav li a.active {
+    background-color: #4CAF50;
+    color: white;
+}
+
 /**
 ***********************
   LOADING SPINNER
@@ -291,15 +339,10 @@ html, body{
 **/
 
 .loadingSpinner {
-		height:60px;
-		width:60px;
-		margin:0px auto;
-		animation: rotation .6s infinite linear;
-		border-left:6px solid #11c1f3;
-		border-right:6px solid #11c1f3;
-		border-bottom:6px solid #11c1f3;
-		border-top:6px solid #387ef5;
-		border-radius:100%;
-		z-index: 2;
-		margin-bottom: 10px;
+	height: 50%;
+	text-align: center;
+}
+
+.loadingSpinner img{
+	height: 100%;
 }
