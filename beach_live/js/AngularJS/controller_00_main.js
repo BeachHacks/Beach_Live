@@ -7,14 +7,14 @@ beachLiveApp.controller('main_controller', function($scope, data, AngFirebase, $
 	/* Controlling nav bar links and routing **/
 	$scope.getUrl = function(_page, _url){
 
-		if(_page == 'HARDWARE'){
+		if(_page != _url.toUpperCase()){
 			return _url;
 		}
 	}
 
-	$scope.openPage = function(_page){
-		if(_page == 'HARDWARE'){
-			return "_blank"
+	$scope.openPage = function(_page, _url){
+		if(_page != _url.toUpperCase()){
+			return "_blank";
 		}
 	}
 
