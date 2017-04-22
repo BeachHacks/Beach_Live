@@ -47,11 +47,18 @@
 
 			<div style="margin-top: 20px;">
 				 <ul style="overflow-y: auto; max-height: 400px; width: 100%;">
-				  <li class="list-group-item animated fadeInUp" ng-repeat="(key, request) in requestList" ng-show="!request.request.status">
-				  	{{request.request.name}}
-				  	 <!-- <span style="float: right; width: 15px; height: 15px; background: green;"></span> -->
-				  	 <!-- <span style="float: right; height: 15px; background: yellow; padding: 3px;">Pending...</span></li> -->
-				  	 <div style="display: inline; float:right; background: yellow; padding: 3px;">Pending</div>
+					<li class="list-group-item animated fadeInUp" ng-repeat="(key, request) in requestList" ng-show="recentAccept.indexOf(key) != -1">
+						{{request.request.name}}
+						<!-- <span style="float: right; width: 15px; height: 15px; background: green;"></span> -->
+						<!-- <span style="float: right; height: 15px; background: yellow; padding: 3px;">Pending...</span></li> -->
+						<div class="mentor-status" style="background: green;">Accepted</div>
+					</li>
+					<li class="list-group-item animated fadeInUp" ng-repeat="(key, request) in requestList" ng-show="!request.request.status">
+						{{request.request.name}}
+						<!-- <span style="float: right; width: 15px; height: 15px; background: green;"></span> -->
+						<!-- <span style="float: right; height: 15px; background: yellow; padding: 3px;">Pending...</span></li> -->
+						<div class="mentor-status" style="background: yellow;">Pending</div>
+					</li>
 				</ul>
 			</div>
 		</div>

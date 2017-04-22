@@ -25,7 +25,7 @@
 									Description: {{request.request.des}}
 								</li>
 								<li>
-									Time: {{convertTime(request.time).time}}
+									Time Requested: {{convertTime(request.time).time}}
 								</li>
 							</ul>
 							<input type="text" class="form-control mentorName" placeholder="Mentor Name" ng-model="mentor_name" >
@@ -61,7 +61,10 @@
 									Description: {{request.request.des}}
 								</li>
 								<li>
-									Time: {{convertTime(request.time).time}}
+									Time Requested: {{convertTime(request.time).time}}
+								</li>
+								<li>
+									Time Accepted: {{convertTime(request.time_accepted).time}}
 								</li>
 								<li>
 									Mentor: {{request.request.mentor}}

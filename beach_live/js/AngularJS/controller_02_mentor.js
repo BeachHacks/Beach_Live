@@ -10,8 +10,8 @@ beachLiveApp.controller('mentor_controller', function($scope, data, AngFirebase,
 	}
 
 	$scope.incomplete 				= false;
-
 	$scope.loading 					= false;
+	$scope.recentAccept 			= AngFirebase.getTopAccepted(5);
 
 
 	$scope.radio_option = ["Web", "iOS", "Android", "VR", "Hardware", "Others"];
@@ -76,12 +76,16 @@ beachLiveApp.controller('mentor_controller', function($scope, data, AngFirebase,
 	}
 
 
+
 	// Trigger rerender
 	AngFirebase.onMentorChange(function(){
 		$scope.requestList = AngFirebase.getRequestList();
+
+		$scope.recentAccept = AngFirebase.getTopAccepted(5);
 		// console.log($scope.content);
 		if(!$scope.$$phase) {
 			$scope.$apply();
 		}
 	});
+
 });

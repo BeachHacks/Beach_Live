@@ -109,6 +109,8 @@ beachLiveApp.service('AngFirebase', function($window) {
         // console.log(mentor_request_list[_key]);
         firebase.database().ref("/mentor/request/"+ _key + "/request").update({"status": true});
         firebase.database().ref("/mentor/request/"+ _key + "/request").update({"mentor": _mentor});
+        firebase.database().ref("/mentor/request/"+ _key).update({"time_accepted": Math.floor(Date.now())});
+
     }
 
     var deleteRequest = function(_key){
@@ -117,6 +119,43 @@ beachLiveApp.service('AngFirebase', function($window) {
 
     var forceRefresh = function(){
         firebase.database().ref("/refresh").update({"timestamp" : Math.floor(Date.now())});
+    }
+
+    var getTopAccepted = function(_numTop){
+
+        var _list = mentor_request_list;
+        var list = [];
+        for( var key in _list){
+            if(_list[key].request.status){
+                list.push({
+                    k : key,
+                    time : _list[key].time_accepted
+                });
+            }
+        }
+
+        var recentList = [];
+        // Sort the most recent
+        var max_length = list.length;
+        for(var i = 0; i < max_length; i++){
+            var high = list[i].time;
+            var index = i;
+            for(var ii = i; ii < max_length; ii++){
+                if(list[ii].time > high){
+                    index = ii;
+                    high = list[ii];
+                }
+            }
+            var temp = list[i];
+            list[i] = high;
+            list[index] = temp;
+        }
+
+        // console.log(list);
+        for(var i = 0; i < list.length && i < _numTop; i++){
+                recentList.push(list[i].k);
+        }
+        return recentList;
     }
     
     // EventListenner for when announcement data changed
@@ -189,7 +228,8 @@ beachLiveApp.service('AngFirebase', function($window) {
         getRequestList      : getRequestList,
         acceptRequest       : acceptRequest,
         deleteRequest       : deleteRequest,
-        forceRefresh        : forceRefresh
+        forceRefresh        : forceRefresh,
+        getTopAccepted      : getTopAccepted
     };
 
     return service;
