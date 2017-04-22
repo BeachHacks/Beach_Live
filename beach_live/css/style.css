@@ -159,6 +159,25 @@ html, body{
 	color: #040404;
 }
 
+#speaker{
+	height: 25px;
+	margin-bottom: 5px;
+}
+
+
+#speaker img{
+	height: 100%;
+	padding: 3px;
+	cursor: pointer;
+}
+
+
+
+#speaker img.active{
+	background-color: #555;
+	border-radius: 2px;
+}
+
 /** Mentor **/
 .form-group{
 	padding-left: 3%;

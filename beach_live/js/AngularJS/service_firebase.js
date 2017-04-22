@@ -167,7 +167,8 @@ beachLiveApp.service('AngFirebase', function($window) {
             var msg = {
                 timestamp : convertTime(snapshotContent[key].timestamp),
                 message : snapshotContent[key].message,
-                "key"   : key
+                "key"   : key,
+                time : snapshotContent[key].timestamp
             };
             updateMsg.unshift(msg);
         }
