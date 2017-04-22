@@ -4,7 +4,7 @@ beachLiveApp.service('AngFirebase', function($window) {
 
 
     var user                = firebase.auth().currentUser;
-    var anno_message        = [];
+    var anno_message        = null;
     var schedule            = null;
     var time                = null;
     var mentor_request_list = {};
@@ -62,7 +62,11 @@ beachLiveApp.service('AngFirebase', function($window) {
 
 
     var getAnnouncement = function(){
-        return anno_message;
+        if(anno_message == null){
+            return 'default'
+        } else {
+            return anno_message;
+        }
     }
 
     var deleteAnnouncement = function(_key){

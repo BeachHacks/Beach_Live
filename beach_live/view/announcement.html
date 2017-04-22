@@ -5,9 +5,10 @@
 		<!-- <div ng-if="!content || content.length <= 0" class="loadingSpinner">
 			<img src="https://s-media-cache-ak0.pinimg.com/originals/72/66/03/7266036c9f3383d21730484150602f01.gif">
 		</div> -->
-
+		<div ng-if="content == 'default'" class="loadingSpinner">
+		</div>
 		<!-- Announcement Message Box -->
-		<div class="box row animated fadeInUp" ng-repeat="c in content">
+		<div class="box row animated fadeInUp" ng-repeat="c in content" ng-if="content != 'default'">
 			<div class="box-timestamp col-xs-2 col-sm-2 col-md-2 col-lg-2">
 				<div>{{c.timestamp.date}}</div>
 				<div>{{c.timestamp.time}}</div>
