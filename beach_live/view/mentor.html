@@ -5,8 +5,9 @@
 		</div>
 	</div>
 
-	<div ng-if="loading">
-		<div class="loadingSpinner"></div>
+	<!-- Loading Spinner while we are waiting for requests -->
+	<div ng-if="loading" class="loadingSpinner">
+		<img src="https://s-media-cache-ak0.pinimg.com/originals/72/66/03/7266036c9f3383d21730484150602f01.gif">
 	</div>
 
 	<div class="box animated fadeIn" ng-show="!loading">
