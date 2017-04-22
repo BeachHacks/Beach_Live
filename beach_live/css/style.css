@@ -170,6 +170,14 @@ html, body{
 	margin-left: -15px;
 }
 
+.inline-radio-option {
+	padding-right: 10px;
+}
+
+.textarea-no-resize {
+	resize: none;
+}
+
 /****************/
 
 /** Side Bar **/
