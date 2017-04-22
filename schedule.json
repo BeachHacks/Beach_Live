@@ -16,9 +16,29 @@
       "description": "@ TBA",
       "title": "Team Formation"
     },
+    "4:00 pm - 5:00 pm": {
+      "description": "@ Alamitos Bay Room",
+      "title": "Git Started"
+    },
+    "5:00 pm - 6:00 pm": {
+      "description": "@ Alamitos Bay Room",
+      "title": "David's"
+    },
     "6:00 pm": {
       "description": "@ USU courtyard",
       "title": "Dinner"
+    },
+    "7:00 pm - 8:00 pm": {
+      "description": "@ Alamitos Bay Room",
+      "title": "Neal"
+    },
+    "8:30 pm - 9:30 pm": {
+      "description": "@ Alamitos Bay Room",
+      "title": "FriendBuy"
+    },
+    "10:00 pm - 11:00 pm": {
+      "description": "@ Alamitos Bay Room",
+      "title": "Make"
     },
     "11:30 pm - 12:00pm": {
       "description": "Mini Event @ TBA ",
@@ -33,6 +53,10 @@
     "8:00 am": {
       "description": "@ TBA",
       "title": "Breakfast"
+    },
+    "10:00 am - 11:00 am": {
+      "description": "@ Alamitos Bay Room",
+      "title": "Gold"
     },
     "1:00 pm": {
       "description": "@ TBA",
