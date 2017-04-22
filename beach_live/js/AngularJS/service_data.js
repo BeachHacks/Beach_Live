@@ -8,6 +8,7 @@ beachLiveApp.service('data', ['AngFirebase', function(AngFirebase) {
     		ANNOUCEMENTS	: "announcement",
         SCHEDULE        : "schedule",
     		MAP				: "map",
+        VENUE       : "venue",
     		MENTOR			: "mentor",
     		HARDWARE		: "test",
     		SONG			: "song"

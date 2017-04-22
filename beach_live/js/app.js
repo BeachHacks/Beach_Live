@@ -55,6 +55,12 @@ beachLiveApp.config(['$stateProvider', '$urlRouterProvider', '$compileProvider',
 			controller: ""
 		})
 
+		.state("public.venue",{
+			url: 'venue',
+			templateUrl: "view/venue.html",
+			controller: ""
+		})
+
 		.state("public.mentor", {
 			url: "mentor",
 			templateUrl: "view/mentor.html",
