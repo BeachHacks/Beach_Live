@@ -338,11 +338,23 @@ html, body{
 ***********************
 **/
 
-.loadingSpinner {
-	height: 50%;
-	text-align: center;
+.loadingSpinner{
+	height: 60px;
+	width: 60px;
+	margin: 0px auto;
+	border-left: 6px solid #11c1f3;
+	border-right: 6px solid #11c1f3;
+	border-bottom: 6px solid #11c1f3;
+	border-top: 6px solid #387ef5;
+	border-radius: 100%;
+	z-index:2;
+	margin-bottom: 10px;
+
+	-webkit-animation:spin .6s linear infinite;
+    -moz-animation:spin .6s linear infinite;
+    animation:spin .6s linear infinite
 }
 
-.loadingSpinner img{
-	height: 100%;
-}
+@-moz-keyframes spin { 100% { -moz-transform: rotate(360deg); } }
+@-webkit-keyframes spin { 100% { -webkit-transform: rotate(360deg); } }
+@keyframes spin { 100% { -webkit-transform: rotate(360deg); transform:rotate(360deg); } }
