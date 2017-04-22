@@ -2,6 +2,9 @@ beachLiveApp.controller('main_controller', function($scope, data, AngFirebase, $
 	$scope.tab = data.tab;
 	$scope.data = data;
 
+	$scope.curMap = "campus";
+
+	/* Controlling nav bar links and routing **/
 	$scope.getUrl = function(_page, _url){
 
 		if(_page == 'HARDWARE'){
@@ -13,5 +16,11 @@ beachLiveApp.controller('main_controller', function($scope, data, AngFirebase, $
 		if(_page == 'HARDWARE'){
 			return "_blank"
 		}
+	}
+
+	/* Controlling Map*/
+	$scope.selectMap = function(_map){
+		console.log(_map);
+		$scope.curMap = _map;
 	}
 });
