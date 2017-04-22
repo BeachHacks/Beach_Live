@@ -178,6 +178,15 @@ html, body{
 	resize: none;
 }
 
+.mentor-status{
+	display: inline;
+	float: right;
+	padding: 3px;
+	width: 80px;
+	text-align: center;
+	border-radius: 5px;
+}
+
 /****************/
 
 /** Side Bar **/
