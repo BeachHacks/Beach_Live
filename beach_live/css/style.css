@@ -26,7 +26,7 @@ html, body{
 	background: yellow;
 	/*background-image: url("../asset/img/csulbTower.jpg");*/
 	/*background-color: #F8CD53;*/
-	background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.4)), url("../asset/img/csulbTower.jpg");
+	background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.4)), url("https://i.imgur.com/5q1EjuQ.jpg");
 	background-repeat: no-repeat;
 	background-size: cover;
 	/*background-attachment:fixed;*/
@@ -110,6 +110,10 @@ html, body{
 	/*background-image:url('../campusMap.pdf');*/
 	height: 100px;
 	/*background-image:url('https://sbloom2.files.wordpress.com/2016/03/b0936-testimages.jpeg?w=400&h=265');*/
+}
+
+.campus-img {
+	width: 100%;
 }
 
 /** Announcement Page **/
