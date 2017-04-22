@@ -1,7 +1,24 @@
-<div class="animated fadeIn" style="height: 100%">
+<div class="animated fadeIn" style="height: 100%" ng-controller="main_controller">
+<!--
 	<div id="campus-map">
 		<a target="_blank" href="http://beachhacks.com/campusMap.pdf ">Campus Map</a>
 		<img class="campus-img" src="https://i.imgur.com/hgsFmwP.png" alt="" />
-		<!--<embed embed-src="campusMap.pdf" src="campusMap.pdf" width="100%" height="1300px" type="application/pdf">-->
+		<embed embed-src="campusMap.pdf" src="campusMap.pdf" width="100%" height="1300px" type="application/pdf">
+	</div>
+-->
+
+
+	<div id="map_nav">
+		<ul>
+		  <li><a ng-click="selectMap('campus')" ng-class="{'active': curMap == 'campus'}">Campus</a></li>
+		  <li><a ng-click="selectMap('venue')" ng-class="{'active': curMap == 'venue'}">Venue</a></li>
+		</ul>
+	</div>
+	<div id="campus-map" ng-show="curMap == 'campus'">
+		<a target="_blank" href="http://beachhacks.com/campusMap.pdf "><img class="campus-img" src="https://i.imgur.com/hgsFmwP.png" alt="" /></a>
+	</div>
+
+	<div id="campus-map" ng-show="curMap == 'venue'">
+		<a target="_blank" href="http://beachhacks.com/campusMap.pdf "><img class="campus-img" src="https://i.imgur.com/hgsFmwP.png" alt="" /></a>
 	</div>
 </div>
