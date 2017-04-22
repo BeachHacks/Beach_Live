@@ -1,5 +1,5 @@
 beachLiveApp.service('data', ['AngFirebase', function(AngFirebase) {
-    
+
 
 
     var data = {
@@ -9,7 +9,7 @@ beachLiveApp.service('data', ['AngFirebase', function(AngFirebase) {
             SCHEDULE        : "schedule",
     		MAP				: "map",
     		MENTOR			: "mentor",
-    		HARDWARE		: "test",
+        HARDWARE    :  "hardware",
     		SONG			: "song"
     	}
     	// announcement_content : getAnnouncement

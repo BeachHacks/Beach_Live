@@ -61,6 +61,12 @@ beachLiveApp.config(['$stateProvider', '$urlRouterProvider', '$compileProvider',
 			controller: "mentor_controller"
 		})
 
+		.state("public.hardware", {
+			url: "hardware",
+			templateUrl: "view/hardware.html",
+			controller: "hardware_controller"
+		})
+
 		.state("public.song", {
 			url: "song",
 			templateUrl: "view/song.html",
