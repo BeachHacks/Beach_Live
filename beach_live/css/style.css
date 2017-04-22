@@ -291,15 +291,10 @@ html, body{
 **/
 
 .loadingSpinner {
-		height:60px;
-		width:60px;
-		margin:0px auto;
-		animation: rotation .6s infinite linear;
-		border-left:6px solid #11c1f3;
-		border-right:6px solid #11c1f3;
-		border-bottom:6px solid #11c1f3;
-		border-top:6px solid #387ef5;
-		border-radius:100%;
-		z-index: 2;
-		margin-bottom: 10px;
+	height: 50%;
+	text-align: center;
+}
+
+.loadingSpinner img{
+	height: 100%;
 }
