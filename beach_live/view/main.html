@@ -2,7 +2,7 @@
 	<!-- Menu Bar -->
 	<div id="menu-bar">
 		<div id="menu-tab" class="navButton" >
-			<a ng-repeat="(name, url) in tab" ui-sref="public.{{url}}" ui-sref-active="activePage">{{name}}</a>
+			<a ng-repeat="(name, url) in tab" href="{{getUrl(name, url)}}" target="{{openPage(name)}}" ui-sref="public.{{url}}" ui-sref-active="activePage">{{name}}</a>
 		</div>
 	</div> <!-- Menu Bar -->
 

@@ -9,7 +9,7 @@ beachLiveApp.service('data', ['AngFirebase', function(AngFirebase) {
             SCHEDULE        : "schedule",
     		MAP				: "map",
     		MENTOR			: "mentor",
-    		HARDWARE		: "test",
+    		HARDWARE		: "https://hardware.mlh.io/",
     		SONG			: "song"
     	}
     	// announcement_content : getAnnouncement
