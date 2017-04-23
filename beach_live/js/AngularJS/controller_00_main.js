@@ -1,4 +1,4 @@
-beachLiveApp.controller('main_controller', function($scope, data, AngFirebase, $state){
+beachLiveApp.controller('main_controller', function($scope, data, AngFirebase, $state, notification){
 	$scope.tab 		= data.tab;
 	$scope.data 	= data;
 

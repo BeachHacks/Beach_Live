@@ -8,7 +8,7 @@
 		<div ng-if="content == 'default'" class="loadingSpinner">
 		</div>	
 		 <div id="speaker" >
-		 	<img ng-class="{active: notificationEnabled}"  ng-click="enableNotification()" src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/21/Speaker_Icon.svg/2000px-Speaker_Icon.svg.png">
+		 	<img ng-class="{active: notificationEnabled()}"  ng-click="enableNotification()" src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/21/Speaker_Icon.svg/2000px-Speaker_Icon.svg.png">
 		 </div>
 		<!-- Announcement Message Box -->
 		<div class="box row animated fadeInUp" ng-repeat="c in content" ng-if="content != 'default'">
