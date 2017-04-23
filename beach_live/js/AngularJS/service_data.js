@@ -9,6 +9,7 @@ beachLiveApp.service('data', ['AngFirebase', function(AngFirebase) {
     		MAP				: "map",
     		MENTOR			: "mentor",
     		HARDWARE		: "https://hardware.mlh.io/events/beach-hacks",
+            DEVPOST             : "https://beachhacks-2.devpost.com/",
     		SONG			: "song"
     	},
         media : {
