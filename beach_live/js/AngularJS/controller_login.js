@@ -49,4 +49,8 @@ beachLiveApp.controller('login_controller', function($scope, AngFirebase, $state
 			$('#loginModal').modal('show'); 
 		}
 	}
+
+	$scope.logIn = function(){
+		$('#loginModal').modal('show'); 
+	}
 });
