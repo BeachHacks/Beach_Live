@@ -1,6 +1,10 @@
 [![Stories in Ready](https://badge.waffle.io/BeachHacks/Beach_Live.png?label=ready&title=Ready)](https://waffle.io/BeachHacks/Beach_Live)
 [![Build Status](https://travis-ci.org/BeachHacks/Beach_Live.svg?branch=master)](https://travis-ci.org/BeachHacks/Beach_Live)
 
+# BeachHacks Live
+
+Live site for BeachHacks where attendees are able to read announcements, view campus and venue maps, send requests for mentors and song requests.
+
 ## Developing Locally
 
 1. Clone this repo and cd into the project's folder.
