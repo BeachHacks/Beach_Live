@@ -47,3 +47,8 @@ install a Cross Origin plugin for Chrome.
 
 ### Deploy: [Deployment Site](https://beachlive-e9dbc.firebaseapp.com)
 ### Live Site: [Live Site](https://live.beachhacks.com)
+
+----------------------------
+Pull Requests and Issues Welcomed
+
+Made with &hearts; from the BeachHacks Team.
