@@ -5,6 +5,8 @@
 
 Live site for BeachHacks where attendees are able to read announcements, view campus and venue maps, send requests for mentors and song requests.
 
+![](https://raw.githubusercontent.com/BeachHacks/Beach_Live/readme/screenshots/screenshot1.png)
+
 ## Features
 
 * Push announcements
