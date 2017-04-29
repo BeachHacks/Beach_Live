@@ -5,7 +5,7 @@
 
 Live site for BeachHacks where attendees are able to read announcements, view campus and venue maps, send requests for mentors and song requests.
 
-# Features
+## Features
 
 * Push announcements
 * Page for easily displaying maps for the event
