@@ -5,6 +5,13 @@
 
 Live site for BeachHacks where attendees are able to read announcements, view campus and venue maps, send requests for mentors and song requests.
 
+# Features
+
+* Push announcements
+* Page for easily displaying maps for the event
+* Mentor requests
+* Song Requests
+
 ## Developing Locally
 
 1. Clone this repo and cd into the project's folder.
