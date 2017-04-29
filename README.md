@@ -14,6 +14,12 @@ Live site for BeachHacks where attendees are able to read announcements, view ca
 * Mentor requests
 * Song Requests
 
+## Tools & Tech
+
+* Firebase
+* AngularJS 1.X
+* Slack
+
 ## Developing Locally
 
 1. Clone this repo and cd into the project's folder.
